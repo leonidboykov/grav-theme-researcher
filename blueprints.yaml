@@ -10,7 +10,7 @@ demo: http://localhost.dev
 keywords: grav, theme, responsive
 bugs: https://github.com/ibrainltd/ibrainltd-theme/issues
 readme: https://github.com/ibrainltd/ibrainltd-theme/blob/develop/README.md
-license: UNLICENSED
+license: MIT
 
 form:
   validation: loose
