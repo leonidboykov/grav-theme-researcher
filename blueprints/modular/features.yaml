@@ -1,0 +1,89 @@
+title: Features
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/features
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/features
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+        features:
+          type: tab
+          title: Features
+          fields:
+            header.features:
+              name: features
+              type: list
+              style: vertical
+              label: Features
+              fields:
+                .header:
+                  type: text
+                  label: Header
+                .icon:
+                  type: text
+                  default: check
+                  label: Icon
+                .text:
+                  type: editor
+                  label: Text
+                  autofocus: true
+        content:
+          fields:
+            header.show_title:
+              type: toggle
+              label: Show title
+              highlight: 1
+              help: Shot title
+              options:
+                  1: PLUGIN_ADMIN.YES
+                  0: PLUGIN_ADMIN.NO
+              validate:
+                  type: bool
+            header.section_style:
+              type: select
+              label: Section style
+              classes: fancy
+              default: left
+              options:
+                'white': 'White'
+                'light': 'Light'
+                'primary': 'Primary'
+                'info': 'Info'
+                'success': 'Success'
+                'warning': 'Warning'
+                'danger': 'Danger'
+                'dark': 'Dark'
+              type: tab
+            header.section_size:
+              type: select
+              label: Section size
+              classes: fancy
+              default: medium
+              options:
+                'small': 'Small'
+                'medium': 'Medium'
+                'large': 'Large'
+                'fullheight': 'Full Height'
+              type: tab
+            header.features_style:
+              type: select
+              label: Style of Features block
+              classes: fancy
+              default: large
+              options:
+                'small': 'Small'
+                'large': 'Large'
+              type: tab

@@ -1,0 +1,32 @@
+{
+  "name": "ibrain-ltd",
+  "version": "0.1.0",
+  "description": "Exclusive theme for iBrain Ltd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass --watch --output-style compressed --inlcude-path sass sass/main.scss css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrainltd/ibrainltd-theme.git"
+  },
+  "keywords": [
+    "grav",
+    "theme",
+    "responsive"
+  ],
+  "author": "Leonid Boykov",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/ibrainltd/ibrainltd-theme/issues"
+  },
+  "homepage": "https://github.com/ibrainltd/ibrainltd-theme#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.0"
+  },
+  "dependencies": {
+    "bulma": "^0.3.2",
+    "materialize-css": "^0.98.0"
+  }
+}

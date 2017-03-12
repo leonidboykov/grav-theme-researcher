@@ -1,0 +1,41 @@
+{% macro place_object(image, icon) %}
+  {% if icon %}
+    <div class="feature-icon"><i class="fa fa-{{ icon }} fa-5x"></i></div>
+  {% elseif image %}
+    {{ image.html }}
+  {% endif %}
+{% endmacro %}
+
+{% set image = page.media.images|first %}
+<section class="hero is-medium is-{{ page.header.section_style }}">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-2 has-text-centered">{{ page.title }}</h2>
+      <div class="columns is-vcentered">
+        {% if page.header.object_align == "none" %}
+        <div class="content">
+          {{ content }}
+        </div>
+        {% elseif page.header.object_align == "right" %}
+        <div class="column">
+          <div class="content">
+          {{ content }}
+          </div>
+        </div>
+        <div class="column is-one-third has-text-centered is-hidden-mobile">
+          {{ _self.place_object(image, page.header.icon) }}
+        </div>
+        {% else %}
+        <div class="column is-one-third has-text-centered is-hidden-mobile">
+          {{ _self.place_object(image, page.header.icon) }}
+        </div>
+        <div class="column">
+          <div class="content">
+          {{ content }}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

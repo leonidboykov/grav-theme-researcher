@@ -5,5 +5,5 @@ use Grav\Common\Theme;
 
 class IBrainLtd extends Theme
 {
-    // Access plugin events in this class
+  // Access plugin events in this class
 }

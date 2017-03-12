@@ -1,3 +1,11 @@
 en:
+  SETTINGS:
+    YEAR_OF_FOUNDATION:
+      NAME: Year of Foundation
+      HELP: Initial year in footer
 
 ru:
+  SETTINGS:
+    YEAR_OF_FOUNDATION:
+      NAME: Год основания
+      HELP: Начальный год в подвале

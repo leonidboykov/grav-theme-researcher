@@ -1,48 +1,18 @@
-{% macro loop(page) %}
-    {% for p in page.children.visible %}
-        {% set current_page = (p.active or p.activeChild) ? 'selected' : '' %}
-        {% if p.children.visible.count > 0 %}
-            <li class="has-children {{ current_page }}">
-                <a href="{{ p.url }}">
-                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
-                    {{ p.menu }}
-                </a>
-                <ul>
-                    {{ _self.loop(p) }}
-                </ul>
-            </li>
-        {% else %}
-            <li class="{{ current_page }}">
-                <a href="{{ p.url }}">
-                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
-                    {{ p.menu }}
-                </a>
-            </li>
-        {% endif %}
-    {% endfor %}
-{% endmacro %}
-
-<ul>
-    {% if theme_config.dropdown.enabled %}
-        {{ _self.loop(pages) }}
-    {% else %}
-        {% for page in pages.children.visible %}
-            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-            <li class="{{ current_page }}">
-                <a href="{{ page.url }}">
-                    {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
-                    {{ page.menu }}
-                </a>
-            </li>
-        {% endfor %}
-    {% endif %}
-    {% for mitem in site.menu %}
-        <li>
-            <a href="{{ mitem.url }}">
-                {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
-                {{ mitem.text }}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
-
+<nav class="nav has-shadow">
+  <div class="container">
+    <div class="nav-left">
+      <a class="nav-item is-brand" href="#"><img src="{{ url('theme://images/logo_dark.svg') }}" alt="iBrain Ltd" style="height:150px"></a>
+    </div>
+    <span id="nav-toggle" class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div id="nav-menu" class="nav-right nav-menu">
+      {% for page in pages.children.visible %}
+        {% set current_page = (page.active or page.activeChild) ? 'is-active' : '' %}
+        <a class="nav-item {{ current_page }}" href="{{ mitem.url }}">{{ page.menu }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</nav>

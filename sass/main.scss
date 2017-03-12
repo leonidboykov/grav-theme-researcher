@@ -1,0 +1,56 @@
+@import 'bulma';
+
+.nav {
+  padding: 30px 0;
+}
+
+.nav-item {
+  padding: 0 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav > .container {
+  min-height: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .hero.is-dark .nav-menu {
+    background-color: rgba(39, 111, 145, .9);
+  }
+  .nav-item {
+    line-height: 50px;
+  }
+}
+
+.image-in-header {
+  background: {
+    image: linear-gradient(rgba(25, 181, 254, 0.2),rgba(25, 181, 254, 0.4)),linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url("../img/BCI_feedback.jpg");
+    repeat: no-repeat;
+    size: cover;
+    color: rgba(255, 255, 255, .9);
+  }
+}
+
+.feature-icon > i {
+  color: $primary;
+  font-size: 200px;
+}
+
+.small-feature-icon > i {
+  color: $primary;
+}
+
+.secondary-feature-icon {
+  padding-bottom: 60px;
+}
+
+.content .fa-ul {
+  list-style: none;
+}
+
+// Footer
+footer .hero-foot {
+  background: darken($primary, 10);
+  line-height: 50px;
+}

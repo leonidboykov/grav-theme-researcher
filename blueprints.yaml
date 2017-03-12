@@ -15,13 +15,9 @@ license: UNLICENSED
 form:
   validation: loose
   fields:
-    dropdown.enabled:
-        type: toggle
-        label: Dropdown in Menu
-        highlight: 1
-        default: 1
-        options:
-          1: PLUGIN_ADMIN.ENABLED
-          0: PLUGIN_ADMIN.DISABLED
-        validate:
-          type: bool
+    initial.date:
+      type: datetime
+      label: SETTINGS.YEAR_OF_FOUNDATION
+      help: SETTINGS.YEAR_OF_FOUNDATION.HELP
+      default: 01-01-2016 00:00
+      validate.required: true

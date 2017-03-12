@@ -1,0 +1,45 @@
+<section class="hero is-{{ page.header.section_size }} is-{{ page.header.section_style }}">
+  <div class="hero-body">
+    <div class="container">
+      {% if page.header.show_title %}
+        <h2 class="title is-2 has-text-centered">{{ page.title }}</h2>
+      {% endif %}
+      <div class="columns is-multiline">
+        {% for feature in page.header.features %}
+          {% if page.header.features_style == "large" %}
+            <div class="column has-text-centered">
+              {% if feature.icon %}
+              <span class="icon is-large secondary-feature-icon">
+                <i class="fa fa-{{ feature.icon }}"></i>
+              </span>
+              {% endif %}
+              {% if feature.header %}
+              <p class="title is-4"><strong>{{ feature.header }}</strong></p>
+              {% endif %}
+              {% if feature.text %}
+              <p class="subtitle">{{ feature.text|markdown }}</p>
+              {% endif %}
+            </div>
+          {% else %}
+            <div class="column is-half">
+              <article class="media">
+                <div class="media-left">
+                  <span class="icon is-large small-feature-icon">
+                    <i class="fa fa-check"></i>
+                  </span>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                    <strong>{{ feature.header }}</strong>
+                    {{ feature.text|markdown }}
+                  </div>
+                </div>
+              </article>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="content">{{ content }}</div>
+    </div>
+  </div>
+</section>

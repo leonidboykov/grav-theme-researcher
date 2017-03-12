@@ -1,0 +1,64 @@
+title: Text
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/text
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/text
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+        content:
+          fields:
+            uploads:
+              label: Page Media (first one will be displayed next to your content)
+            header.icon:
+              type: text
+              label: Icon
+            header.object_align:
+              type: select
+              label: Object position
+              classes: fancy
+              default: left
+              options:
+                'left': 'Left'
+                'right': 'Right'
+                'none': 'Disabled'
+              type: tab
+            header.section_style:
+              type: select
+              label: Section style
+              classes: fancy
+              default: white
+              options:
+                'white': 'White'
+                'light': 'Light'
+                'primary': 'Primary'
+                'info': 'Info'
+                'success': 'Success'
+                'warning': 'Warning'
+                'danger': 'Danger'
+                'dark': 'Dark'
+              type: tab
+            header.section_size:
+              type: select
+              label: Section size
+              classes: fancy
+              default: medium
+              options:
+                'small': 'Small'
+                'medium': 'Medium'
+                'large': 'Large'
+                'fullheight': 'Full Height'
+              type: tab

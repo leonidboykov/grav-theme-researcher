@@ -3,62 +3,78 @@
 <html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
 <head>
 {% block head %}
-    <meta charset="utf-8" />
-    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+  <meta charset="utf-8" />
+  <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% include 'partials/metadata.html.twig' %}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include 'partials/metadata.html.twig' %}
 
-    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
-    <link rel="canonical" href="{{ page.url(true, true) }}" />
+  <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+  <link rel="canonical" href="{{ page.url(true, true) }}" />
 
-    {% block stylesheets %}
-        {% do assets.addCss('http://yui.yahooapis.com/pure/0.6.0/pure-min.css', 100) %}
-        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %}
-        {% do assets.addCss('theme://css/custom.css', 98) %}
-    {% endblock %}
-    {{ assets.css() }}
+  {% block stylesheets %}
+    {% do assets.addCss('https://fonts.googleapis.com/css?family=Roboto:400,500,700', 100) %}
+    {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', 99) %}
+    {% do assets.addCss('theme://css/main.css', 98) %}
+  {% endblock %}
+  {{ assets.css() }}
 
-    {% block javascripts %}
-        {% do assets.addJs('jquery', 100) %}
-    {% endblock %}
-    {{ assets.js() }}
+  {% block javascripts %}
+    {% do assets.addJs('jquery', 100) %}
+  {% endblock %}
+  {{ assets.js() }}
 
 {% endblock head%}
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
 
 {% block header %}
-    <div class="header">
-        <div class="wrapper padding">
-            <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
-                <i class="fa fa-rebel"></i>
-                {{ config.site.title }}
-            </a>
-            {% block header_navigation %}
-            <nav class="main-nav">
-                {% include 'partials/navigation.html.twig' %}
-            </nav>
-            {% endblock %}
-        </div>
-    </div>
+  {% include 'partials/navigation.html.twig' %}
 {% endblock %}
 
 {% block body %}
-    <section id="body">
-        <div class="wrapper padding">
-        {% block content %}{% endblock %}
-        </div>
-    </section>
+  {% block content %}{% endblock %}
 {% endblock %}
 
 {% block footer %}
-    <div class="footer text-center">
-        <div class="wrapper padding">
-            <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
+  <footer class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-half">
+            <h5 class="title is-3">iBrain</h5>
+            <p>&copy; {{ theme_config.initial.date|date("Y") }}-{{ "now"|date("Y") }} iBrain Ltd.</p><br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores corporis dolorem reprehenderit temporibus, dignissimos quia obcaecati incidunt eos. Dolore quos aliquam labore non nesciunt beatae fuga, quam at error consectetur!</p>
+          </div>
+          <div class="column is-one-quarter">
+            <h5 class="title is-4">Links</h5>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Legal Staff</a></li>
+              <li><a href="#">License</a></li>
+              <li><a href="#">Another Awesome Link</a></li>
+              <li><a href="#">Press me</a></li>
+            </ul>
+          </div>
+          <div class="column is-one-quarter">
+            <h5 class="title is-4">More Links</h5>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Project</a></li>
+              <li><a href="#">Publications</a></li>
+              <li><a href="#">Contacts</a></li>
+              <li><a href="#">Check This Out</a></li>
+              <li><a href="#">I am a link too</a></li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="hero-foot">
+      <div class="container">Made by <a href="https://leonidboykov.com">Leonid Boykov</a></div>
+    </div>
+  </footer>
 {% endblock %}
 
 {% block bottom %}
