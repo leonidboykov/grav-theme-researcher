@@ -1,8 +1,5 @@
-title: Text
-extends@:
-  - generic@
-  - type: default
-    context: blueprints://generic
+title: Contacts
+'@extends': default
 
 form:
   fields:
@@ -15,12 +12,12 @@ form:
                 column1:
                   fields:
                     name:
-                      default: modular/text
+                      default: contacts
                       '@data-options': '\Grav\Common\Page\Pages::modularTypes'
             overrides:
               fields:
                 header.template:
-                  default: modular/text
+                  default: contacts
                   '@data-options': '\Grav\Common\Page\Pages::modularTypes'
         section:
           type: tab
@@ -54,7 +51,7 @@ form:
               type: toggle
               label: Show title
               default: 1
-              help: Shot title
+              help: Show title
               options:
                   1: PLUGIN_ADMIN.YES
                   0: PLUGIN_ADMIN.NO
@@ -69,20 +66,3 @@ form:
                 'left': Left
                 'centered': 'Center'
                 'right': 'Right'
-        content:
-          fields:
-            uploads:
-              label: Page Media (first one will be displayed next to your content)
-            header.icon:
-              type: text
-              label: Icon
-            header.object_align:
-              type: select
-              label: Object position
-              classes: fancy
-              default: left
-              options:
-                'left': 'Left'
-                'right': 'Right'
-                'none': 'Disabled'
-              type: tab

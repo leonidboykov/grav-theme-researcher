@@ -26,7 +26,6 @@
     "node-sass": "^4.5.0"
   },
   "dependencies": {
-    "bulma": "^0.3.2",
-    "materialize-css": "^0.98.0"
+    "bulma": "^0.3.2"
   }
 }

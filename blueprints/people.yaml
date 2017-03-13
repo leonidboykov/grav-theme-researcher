@@ -1,8 +1,5 @@
-title: Text
-extends@:
-  - generic@
-  - type: default
-    context: blueprints://generic
+title: People
+'@extends': default
 
 form:
   fields:
@@ -15,13 +12,11 @@ form:
                 column1:
                   fields:
                     name:
-                      default: modular/text
-                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+                      default: people
             overrides:
               fields:
                 header.template:
-                  default: modular/text
-                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+                  default: people
         section:
           type: tab
           title: Section
@@ -54,7 +49,7 @@ form:
               type: toggle
               label: Show title
               default: 1
-              help: Shot title
+              help: Show title
               options:
                   1: PLUGIN_ADMIN.YES
                   0: PLUGIN_ADMIN.NO
@@ -69,20 +64,57 @@ form:
                 'left': Left
                 'centered': 'Center'
                 'right': 'Right'
+        people:
+          type: tab
+          title: People
+          fields:
+            header.people:
+              name: people
+              type: list
+              style: vertical
+              label: People
+              fields:
+                .name:
+                  type: text
+                  label: Name
+                .job:
+                  type: text
+                  label: Job
+                .short_description:
+                  type: text
+                  label: Short Description
+                .full_description:
+                  type: editor
+                  autofocus: true
+                  label: Full Description
+                .social:
+                  name: social
+                  type: list
+                  label: Social Networks
+                  fields:
+                    .icon:
+                      type: text
+                      label: Icon
+                    .url:
+                      type: text
+                      label: URL
+                .photo:
+                  type: filepicker
+                  label: Select a file
+                  preview_images: true
+                .show_on_index:
+                  type: toggle
+                  label: Show on Home page
+                  default: 1
+                  help: Short title
+                  options:
+                      1: PLUGIN_ADMIN.YES
+                      0: PLUGIN_ADMIN.NO
+                  validate:
+                      type: bool
         content:
           fields:
+            content:
+              unset@: true
             uploads:
-              label: Page Media (first one will be displayed next to your content)
-            header.icon:
-              type: text
-              label: Icon
-            header.object_align:
-              type: select
-              label: Object position
-              classes: fancy
-              default: left
-              options:
-                'left': 'Left'
-                'right': 'Right'
-                'none': 'Disabled'
-              type: tab
+              label: Photos repository

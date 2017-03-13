@@ -1,8 +1,8 @@
 <section class="hero is-{{ page.header.section_size }} is-{{ page.header.section_style }}">
   <div class="hero-body">
     <div class="container">
-      {% if page.header.show_title %}
-        <h2 class="title is-2 has-text-centered">{{ page.title }}</h2>
+      {% if page.header.title_enabled %}
+        <h2 class="title is-2 has-text-{{ page.header.title_position }}">{{ page.title }}</h2>
       {% endif %}
       <div class="columns is-multiline">
         {% for feature in page.header.features %}

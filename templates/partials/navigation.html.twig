@@ -11,7 +11,7 @@
     <div id="nav-menu" class="nav-right nav-menu">
       {% for page in pages.children.visible %}
         {% set current_page = (page.active or page.activeChild) ? 'is-active' : '' %}
-        <a class="nav-item {{ current_page }}" href="{{ mitem.url }}">{{ page.menu }}</a>
+        <a class="nav-item {{ current_page }}" href="{{ page.url }}">{{ page.menu }}</a>
       {% endfor %}
     </div>
   </div>

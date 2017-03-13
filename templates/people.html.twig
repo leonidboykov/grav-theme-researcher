@@ -1,0 +1,38 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+  <section class="hero is-{{ page.header.section_size }} is-{{ page.header.section_style }}">
+    <div class="hero-body">
+      <div class="container">
+        {% if page.header.title_enabled %}
+          <h2 class="title is-2 has-text-{{ page.header.title_position }}">{{ page.title }}</h2>
+        {% endif %}
+        {% for member in page.header.people %}
+        <div class="box">
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-128by128">{{ page.media[member.photo].html }}</figure>
+            </div>
+            <div class="media-content">
+              <h3 class="title is-3">{{ member.name }}</h3>
+              <h4 class="subtitle is-5">{{ member.job }}</h4>
+              <div class="content">
+                {{ member.full_description }}
+              </div>
+              <nav class="level">
+                <div class="level-left">
+                  {% for social in member.social %}
+                  <a class="level-item" href="{{ social.link }}">
+                    <span class="icon"><i class="fa fa-{{ social.icon }}"></i></span>
+                  </a>
+                  {% endfor %}
+                </div>
+              </nav>
+            </div>
+          </article>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

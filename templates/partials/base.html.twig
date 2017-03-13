@@ -22,6 +22,7 @@
 
   {% block javascripts %}
     {% do assets.addJs('jquery', 100) %}
+    {% do assets.addJs('theme://js/main.js', 99) %}
   {% endblock %}
   {{ assets.js() }}
 
@@ -32,10 +33,11 @@
 {% block header %}
   {% include 'partials/navigation.html.twig' %}
 {% endblock %}
-
+<main>
 {% block body %}
   {% block content %}{% endblock %}
 {% endblock %}
+</main>
 
 {% block footer %}
   <footer class="hero is-primary">

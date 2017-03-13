@@ -3,9 +3,27 @@ en:
     YEAR_OF_FOUNDATION:
       NAME: Year of Foundation
       HELP: Initial year in footer
+  PUBLICATIONS:
+    FILE_ICON:
+      LABEL: File icon
+      HELP: FontAwesome file type icon (fa-<type>-o)
+  BLOG:
+    ITEM:
+      CONTINUE_READING: Continue reading...
+      NEXT_POST: Next Post
+      PREV_POST: Previous Post
 
 ru:
   SETTINGS:
     YEAR_OF_FOUNDATION:
       NAME: Год основания
       HELP: Начальный год в подвале
+  PUBLICATIONS:
+    FILE_ICON:
+      LABEL: Иконка файла
+      HELP: FontAwesome иконка публикуемого файла (fa-<type>-o)
+  BLOG:
+    ITEM:
+      CONTINUE_READING: Читать далее...
+      NEXT_POST: Следующая запись
+      PREV_POST: Предыдущая запись

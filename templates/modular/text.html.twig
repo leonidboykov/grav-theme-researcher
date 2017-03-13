@@ -7,16 +7,19 @@
 {% endmacro %}
 
 {% set image = page.media.images|first %}
-<section class="hero is-medium is-{{ page.header.section_style }}">
+<section class="hero is-{{ page.header.section_size }} is-{{ page.header.section_style }}">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-2 has-text-centered">{{ page.title }}</h2>
+      {% if page.header.title_enabled %}
+      <h2 class="title is-2 has-text-{{ page.header.title_position }}">{{ page.title }}</h2>
+      {% endif %}
+      {% if page.header.object_align == "none" %}
+      <div class="content">
+        {{ content }}
+      </div>
+      {% else %}
       <div class="columns is-vcentered">
-        {% if page.header.object_align == "none" %}
-        <div class="content">
-          {{ content }}
-        </div>
-        {% elseif page.header.object_align == "right" %}
+        {% if page.header.object_align == "right" %}
         <div class="column">
           <div class="content">
           {{ content }}
@@ -36,6 +39,7 @@
         </div>
         {% endif %}
       </div>
+      {% endif %}
     </div>
   </div>
 </section>

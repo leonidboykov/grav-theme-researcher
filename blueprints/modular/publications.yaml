@@ -1,4 +1,4 @@
-title: Features
+title: Publications
 '@extends': default
 
 form:
@@ -12,12 +12,12 @@ form:
                 column1:
                   fields:
                     name:
-                      default: modular/features
+                      default: modular/publications
                       '@data-options': '\Grav\Common\Page\Pages::modularTypes'
             overrides:
               fields:
                 header.template:
-                  default: modular/features
+                  default: modular/publications
                   '@data-options': '\Grav\Common\Page\Pages::modularTypes'
         section:
           type: tab
@@ -66,39 +66,66 @@ form:
                 'left': Left
                 'centered': 'Center'
                 'right': 'Right'
-        features:
+        publications:
           type: tab
-          title: Features
+          title: Publications
           fields:
-            header.features:
-              name: features
+            header.publications:
+              name: publications
               type: list
               style: vertical
-              label: Features
+              label: Publications
               fields:
                 .header:
                   type: text
                   label: Header
-                .icon:
+                .small_header:
                   type: text
-                  default: check
-                  label: Icon
+                  label: Info header
+                .file_icon:
+                  type: select
+                  label: PUBLICATIONS.FILE_ICON.LABEL
+                  help: PUBLICATIONS.FILE_ICON.HELP
+                  classes: fancy
+                  default: text
+                  options:
+                    'archive': Archive
+                    'audio': Audio
+                    'code': Code
+                    'excel': Excel
+                    'image': Image
+                    'pdf': PDF
+                    'powerpoint': Powerpoint
+                    'text': Text
+                    'video': Video
+                    'word': Word
+                .button_label:
+                  type: text
+                  label: Button label
+                  placeholder: Download
+                .button_icon:
+                  type: select
+                  label: Button icon
+                  help: Button icon help
+                  classes: fancy
+                  default: download
+                  options:
+                    'download': Download
+                    'github': Github
+                    'gitlab': Gitlab
+                    'bitbucket': Bitbucket
+                    'git': Generic git
+                    'link': Link
+                    'external-link': External link
+                .button_link:
+                  type: link
+                  label: Button link
+                  placeholder: http(s)://example.com
                 .text:
                   type: editor
                   label: Text
                   autofocus: true
-        content:
-          fields:
-            content:
-              unset@: true
-            uploads:
-              unset@: true
-            header.features_style:
-              type: select
-              label: Style of Features block
-              classes: fancy
-              default: large
-              options:
-                'small': 'Small'
-                'large': 'Large'
-              type: tab
+                .uploaded_file:
+                  type: filepicker
+                  label: Select a file
+                  preview_images: true

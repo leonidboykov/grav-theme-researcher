@@ -1,8 +1,5 @@
-title: Text
-extends@:
-  - generic@
-  - type: default
-    context: blueprints://generic
+title: People Widget
+'@extends': default
 
 form:
   fields:
@@ -15,12 +12,12 @@ form:
                 column1:
                   fields:
                     name:
-                      default: modular/text
+                      default: modular/people_widget
                       '@data-options': '\Grav\Common\Page\Pages::modularTypes'
             overrides:
               fields:
                 header.template:
-                  default: modular/text
+                  default: modular/people_widget
                   '@data-options': '\Grav\Common\Page\Pages::modularTypes'
         section:
           type: tab
@@ -71,18 +68,16 @@ form:
                 'right': 'Right'
         content:
           fields:
+            content:
+              unset@: true
             uploads:
-              label: Page Media (first one will be displayed next to your content)
-            header.icon:
-              type: text
-              label: Icon
-            header.object_align:
-              type: select
-              label: Object position
+              unset@: true
+            header.get_people_from:
+              type: pages
+              size: small
               classes: fancy
-              default: left
-              options:
-                'left': 'Left'
-                'right': 'Right'
-                'none': 'Disabled'
-              type: tab
+              default: /team
+              label: Aggregate people from page
+              show_all: false
+              show_modular: false
+              show_root: false

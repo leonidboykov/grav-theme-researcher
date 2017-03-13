@@ -1,0 +1,41 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set collection = page.collection() %}
+{% block content %}
+  <section class="hero is-{{ page.header.section_size }} is-{{ page.header.section_style }}">
+    <div class="hero-body">
+      <div class="container">
+        {% if page.header.title_enabled %}
+          <h2 class="title is-2 has-text-{{ page.header.title_position }}">{{ page.title }}</h2>
+        {% endif %}
+				{% for child in collection %}
+        <div class="box">
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-128by128" ><img src="{{ (child.media.images|first).url }}" alt="Картинка" style="max-height:200px;max-width:200px"></figure>
+            </div>
+            <div class="media-content">
+              <h3 class="title is-3">{{ child.title }}</h3>
+              <h4 class="subtitle is-5"><span class="icon"><i class="fa fa-calendar"></i></span> {{ child.date|date('d-m-Y') }}</h4>
+              <div class="content">
+                {{ child.summary }}
+              </div>
+              <nav class="level">
+                <div class="level-left">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <a class="button is-info" href="{{ child.url }}">{{ 'BLOG.ITEM.CONTINUE_READING'|t }}</a>
+                    </div>
+                  </div>
+              </nav>
+            </div>
+          </article>
+        </div>
+			  {% endfor %}
+        {% if config.plugins.pagination.enabled and collection.params.pagination %}
+          {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+        {% endif %}
+			</div>
+		</div>
+  </section>
+{% endblock %}
