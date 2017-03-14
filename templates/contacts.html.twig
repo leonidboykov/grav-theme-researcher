@@ -1,9 +1,32 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-  {{ page.content }}
-  {% for module in page.collection() %}
-    <div id="{{ _self.pageLinkName(module.menu) }}"></div>
-    {{ module.content }}
-  {% endfor %}
+<section class="hero is-{{ page.header.section_size }} is-{{ page.header.section_style }}">
+  <div class="hero-body">
+    <div class="container">
+      {% if page.header.title_enabled %}
+      <h2 class="title is-2 has-text-{{ page.header.title_position }}">{{ page.title }}</h2>
+      {% endif %}
+      <div class="content">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-small is-{{ page.header.section_style }}">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            {{ page.header.contacts_text|markdown }}
+          </div>
+        </div>
+        <div class="column is-three-quarters">
+          {% include "forms/form.html.twig" with { form: forms('contact-form') } %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

@@ -65,3 +65,11 @@ form:
                 'left': OBJECT_POSITION.LEFT
                 'centered': 'OBJECT_POSITION.CENTER'
                 'right': 'OBJECT_POSITION.RIGHT'
+        contacts:
+          type: tab
+          title: Contacts
+          fields:
+            header.contacts_text:
+              type: editor
+              autofocus: true
+              label: Additional text
