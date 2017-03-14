@@ -1,8 +1,38 @@
 en:
   SETTINGS:
     YEAR_OF_FOUNDATION:
-      NAME: Year of Foundation
+      NAME: Year of foundation
       HELP: Initial year in footer
+  ICON: Icon
+  TABS:
+    SECTION: Section
+    FEATURES: Features
+  TEXT:
+    PAGE_MEDIA: Page media
+  SECTION:
+    SECTION_SIZE:
+      LABEL: Section size
+      SMALL: Small
+      MEDIUM: Medium
+      LARGE: Large
+      FULLHEIGHT: Full height
+    SECTION_COLOR:
+      LABEL: Section color
+    SHOW_TITLE: Show title
+    TITLE_POSITION: Title position
+  FEATURES:
+    STYLE_OF_FEATURES:
+      LABEL: Style of `Features` block
+      SMALL: Small
+      LARGE: Large
+    HEADER: Header
+    TEXT: Description
+  OBJECT_POSITION:
+    LABEL: Object position
+    RIGHT: Right
+    LEFT: Left
+    CENTER: Center
+    DISABLED: Disabled
   PUBLICATIONS:
     FILE_ICON:
       LABEL: File icon
@@ -18,6 +48,36 @@ ru:
     YEAR_OF_FOUNDATION:
       NAME: Год основания
       HELP: Начальный год в подвале
+  ICON: Иконка
+  TABS:
+    SECTION: Секция
+    FEATURES: Особенности
+  TEXT:
+    PAGE_MEDIA: Изображения
+  SECTION:
+    SECTION_SIZE:
+      LABEL: Размер секции
+      SMALL: Маленькая
+      MEDIUM: Средняя
+      LARGE: Большая
+      FULLHEIGHT: Полноэкранная
+    SECTION_COLOR:
+      LABEL: Цвет секции
+    SHOW_TITLE: Показывать заголовок
+    TITLE_POSITION: Положение заголовка
+  FEATURES:
+    STYLE_OF_FEATURES:
+      LABEL: Стиль блока `Особенностей`
+      SMALL: Маленький
+      LARGE: Большой
+    HEADER: Заголовок
+    TEXT: Описание
+  OBJECT_POSITION:
+    LABEL: Положение объекта
+    RIGHT: Справа
+    LEFT: Слева
+    CENTER: В центре
+    DISABLED: Скрыть
   PUBLICATIONS:
     FILE_ICON:
       LABEL: Иконка файла

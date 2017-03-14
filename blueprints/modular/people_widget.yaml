@@ -21,21 +21,21 @@ form:
                   '@data-options': '\Grav\Common\Page\Pages::modularTypes'
         section:
           type: tab
-          title: Section
+          title: TABS.SECTION
           fields:
             header.section_size:
               type: select
-              label: Section size
+              label: SECTION.SECTION_SIZE.LABEL
               classes: fancy
               default: medium
               options:
-                'small': 'Small'
-                'medium': 'Medium'
-                'large': 'Large'
-                'fullheight': 'Full Height'
+                'small': 'SECTION.SECTION_SIZE.SMALL'
+                'medium': 'SECTION.SECTION_SIZE.MEDIUM'
+                'large': 'SECTION.SECTION_SIZE.LARGE'
+                'fullheight': 'SECTION.SECTION_SIZE.FULLHEIGHT'
             header.section_style:
               type: select
-              label: Section color
+              label: SECTION.SECTION_COLOR
               classes: fancy
               default: white
               options:
@@ -49,9 +49,8 @@ form:
                 'dark': 'Dark'
             header.title_enabled:
               type: toggle
-              label: Show title
+              label: SECTION.SHOW_TITLE
               default: 1
-              help: Shot title
               options:
                   1: PLUGIN_ADMIN.YES
                   0: PLUGIN_ADMIN.NO
@@ -59,13 +58,13 @@ form:
                   type: bool
             header.title_position:
               type: select
-              label: Title position
+              label: SECTION.TITLE_POSITION
               classes: fancy
               default: centered
               options:
-                'left': Left
-                'centered': 'Center'
-                'right': 'Right'
+                'left': OBJECT_POSITION.LEFT
+                'centered': 'OBJECT_POSITION.CENTER'
+                'right': 'OBJECT_POSITION.RIGHT'
         content:
           fields:
             content:

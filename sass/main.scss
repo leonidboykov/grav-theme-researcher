@@ -90,6 +90,11 @@ main {
   flex: 1;
 }
 
+// Card equal height
+.card {
+  height: 100%;
+}
+
 // Owl Carousel settings
 #head-slider {
   .owl-item > div {
