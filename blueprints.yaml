@@ -1,7 +1,7 @@
 name: iBrain Ltd
 version: 0.1.0
 description: Exclusive theme for iBrain Ltd
-icon: rebel
+icon: code
 author:
   name: Leonid Boykov
   email: leonid.v.boykov@gmail.com
@@ -15,9 +15,14 @@ license: MIT
 form:
   validation: loose
   fields:
-    initial.date:
-      type: datetime
-      label: SETTINGS.YEAR_OF_FOUNDATION
-      help: SETTINGS.YEAR_OF_FOUNDATION.HELP
-      default: 01-01-2016 00:00
-      validate.required: true
+    settings:
+      type: section
+      title: SETTINGS.LABEL
+      underline: true
+      fields:
+        initial.date:
+          type: datetime
+          label: SETTINGS.YEAR_OF_FOUNDATION
+          help: SETTINGS.YEAR_OF_FOUNDATION.HELP
+          default: 01-01-2016 00:00
+          validate.required: true

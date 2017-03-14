@@ -1,0 +1,4 @@
+{% for page in pages.children.visible %}
+  {% set current_page = (page.active or page.activeChild) ? 'is-active' : '' %}
+  <p class="level-item" href="{{ page.url }}">{{ page.menu }}<a></p>
+{% endfor %}

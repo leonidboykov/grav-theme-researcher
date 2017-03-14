@@ -1,3 +1,5 @@
+{% spaceless %}
+
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
@@ -43,38 +45,24 @@
   <footer class="hero is-primary">
     <div class="hero-body">
       <div class="container">
-        <div class="columns">
-          <div class="column is-half">
-            <h5 class="title is-3">iBrain</h5>
-            <p>&copy; {{ theme_config.initial.date|date("Y") }}-{{ "now"|date("Y") }} iBrain Ltd.</p><br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores corporis dolorem reprehenderit temporibus, dignissimos quia obcaecati incidunt eos. Dolore quos aliquam labore non nesciunt beatae fuga, quam at error consectetur!</p>
+        <nav class="level">
+          <!-- Left side -->
+          <div class="level-left">
+            <div class="level-item is-hidden-mobile">
+              <img src="{{ url('theme://images/logo.svg') }}" alt="iBrain Ltd" style="height:50px">
+            </div>
+            <div class="level-item">
+              <div>
+                <p>&copy; {{ site.title|e('html') }} {{ theme_config.initial.date|date("Y") }}-{{ "now"|date("Y") }}</p>
+                <p>Developed by <a href="https://leonidboykov.com">Leonid Boykov</a></p>
+              </div>
+            </div>
           </div>
-          <div class="column is-one-quarter">
-            <h5 class="title is-4">Links</h5>
-            <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Legal Staff</a></li>
-              <li><a href="#">License</a></li>
-              <li><a href="#">Another Awesome Link</a></li>
-              <li><a href="#">Press me</a></li>
-            </ul>
+          <div class="level-right is-hidden-mobile">
+            {% include 'partials/navigation_alt.html.twig' %}
           </div>
-          <div class="column is-one-quarter">
-            <h5 class="title is-4">More Links</h5>
-            <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Project</a></li>
-              <li><a href="#">Publications</a></li>
-              <li><a href="#">Contacts</a></li>
-              <li><a href="#">Check This Out</a></li>
-              <li><a href="#">I am a link too</a></li>
-            </ul>
-          </div>
-        </div>
+        </nav>
       </div>
-    </div>
-    <div class="hero-foot">
-      <div class="container">Made by <a href="https://leonidboykov.com">Leonid Boykov</a></div>
     </div>
   </footer>
 {% endblock %}
@@ -85,3 +73,5 @@
 
 </body>
 </html>
+
+{% endspaceless %}

@@ -1,5 +1,6 @@
 en:
   SETTINGS:
+    LABEL: Settings
     YEAR_OF_FOUNDATION:
       NAME: Year of foundation
       HELP: Initial year in footer
@@ -45,6 +46,7 @@ en:
 
 ru:
   SETTINGS:
+    LABEL: Настройки
     YEAR_OF_FOUNDATION:
       NAME: Год основания
       HELP: Начальный год в подвале
