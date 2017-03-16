@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% include 'partials/metadata.html.twig' %}
 
-  <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+  <link rel="icon" type="image/png" href="{{ url('theme://images/logo_with_text.png') }}" />
   <link rel="canonical" href="{{ page.url(true, true) }}" />
 
   {% block stylesheets %}
@@ -28,7 +28,7 @@
   {% endblock %}
   {{ assets.js() }}
 
-{% endblock head%}
+{% endblock head %}
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
 
