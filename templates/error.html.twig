@@ -1,12 +1,12 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-	<div id="error">
-		<div>
-			<h1>{{ 'ERROR'|t }} {{ page.header.http_response_code }}</h1>
-			<p>
-				{{ page.content }}
-			</p>
+  <section class="hero is-medium }}">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-2 has-text-left">{{ 'ERROR'|t }} {{ page.header.http_response_code }} Content not found</h2>
+				<span style="font-size: 4rem;">(╯°□°)╯︵ ┻━┻</span>
+			</div>
 		</div>
-	</div>
+  </section>
 {% endblock %}

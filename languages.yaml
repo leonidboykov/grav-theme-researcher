@@ -1,4 +1,5 @@
 en:
+  SCROLL_TO_TOP: Top
   SETTINGS:
     LABEL: Settings
     YEAR_OF_FOUNDATION:
@@ -21,6 +22,7 @@ en:
       LABEL: Section color
     SHOW_TITLE: Show title
     TITLE_POSITION: Title position
+    EMPTY: Sectionless (for fullwidth slider)
   FEATURES:
     STYLE_OF_FEATURES:
       LABEL: Style of `Features` block
@@ -43,8 +45,10 @@ en:
       CONTINUE_READING: Continue reading...
       NEXT_POST: Next Post
       PREV_POST: Previous Post
+  ERROR: Error
 
 ru:
+  SCROLL_TO_TOP: Наверх
   SETTINGS:
     LABEL: Настройки
     YEAR_OF_FOUNDATION:
@@ -67,6 +71,7 @@ ru:
       LABEL: Цвет секции
     SHOW_TITLE: Показывать заголовок
     TITLE_POSITION: Положение заголовка
+    EMPTY: Без секции (для главного слайдера)
   FEATURES:
     STYLE_OF_FEATURES:
       LABEL: Стиль блока `Особенностей`
@@ -89,3 +94,4 @@ ru:
       CONTINUE_READING: Читать далее...
       NEXT_POST: Следующая запись
       PREV_POST: Предыдущая запись
+  ERROR: Ошибка

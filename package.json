@@ -1,7 +1,7 @@
 {
-  "name": "ibrain-ltd",
+  "name": "ibraintech",
   "version": "0.1.0",
-  "description": "Exclusive theme for iBrain Ltd",
+  "description": "Exclusive theme for iBrain Tech",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibrainltd/ibrainltd-theme.git"
+    "url": "git+https://github.com/ibraintech/grav-theme-ibraintech.git"
   },
   "keywords": [
     "grav",
@@ -20,9 +20,9 @@
   "author": "Leonid Boykov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ibrainltd/ibrainltd-theme/issues"
+    "url": "https://github.com/ibraintech/grav-theme-ibraintech/issues"
   },
-  "homepage": "https://github.com/ibrainltd/ibrainltd-theme#readme",
+  "homepage": "https://github.com/ibraintech/grav-theme-ibraintech#readme",
   "devDependencies": {
     "node-sass": "^4.5.0"
   },

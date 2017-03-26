@@ -7,7 +7,12 @@
 {% endmacro %}
 
 {% set image = page.media.images|first %}
-<section class="hero is-{{ page.header.section_size }} is-{{ page.header.section_style }}">
+{% if page.header.empty %}
+<div id="{{ page.header.id }}">
+{{ page.content }}
+</div>
+{% else %}
+<section {% if page.header.id %}id="{{ page.header.id }}"{% endif %} class="hero is-{{ page.header.section_size }} is-{{ page.header.section_style }}">
   <div class="hero-body">
     <div class="container">
       {% if page.header.title_enabled %}
@@ -43,3 +48,4 @@
     </div>
   </div>
 </section>
+{% endif %}

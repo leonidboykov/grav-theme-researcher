@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% include 'partials/metadata.html.twig' %}
 
-  <link rel="icon" type="image/png" href="{{ url('theme://images/logo_with_text.png') }}" />
+  <link rel="icon" type="image/png" href="{{ url('theme://images/logo_dark.svg') }}" />
   <link rel="canonical" href="{{ page.url(true, true) }}" />
 
   {% block stylesheets %}
@@ -30,7 +30,6 @@
 
 {% endblock head %}
 </head>
-<body id="top" class="{{ page.header.body_classes }}">
 
 {% block header %}
   {% include 'partials/navigation.html.twig' %}
@@ -46,15 +45,14 @@
     <div class="hero-body">
       <div class="container">
         <nav class="level">
-          <!-- Left side -->
           <div class="level-left">
             <div class="level-item is-hidden-mobile">
-              <img src="{{ url('theme://images/logo.svg') }}" alt="iBrain Ltd" style="height:50px">
+              <img src="{{ url('theme://images/logo.svg') }}" alt="{{ site.name }}" style="height:50px">
             </div>
             <div class="level-item">
               <div>
                 <p>&copy; {{ site.title|e('html') }} {{ theme_config.initial.date|date("Y") }}-{{ "now"|date("Y") }}</p>
-                <p>Developed by <a href="https://leonidboykov.com">Leonid Boykov</a></p>
+                <p style="color:rgba(255,255,255,.6)">Developed by <a href="https://leonidboykov.com">Leonid Boykov</a></p>
               </div>
             </div>
           </div>

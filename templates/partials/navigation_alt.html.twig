@@ -1,4 +1,5 @@
 {% for page in pages.children.visible %}
   {% set current_page = (page.active or page.activeChild) ? 'is-active' : '' %}
-  <p class="level-item" href="{{ page.url }}">{{ page.menu }}<a></p>
+  <a class="level-item" href="{{ page.url }}">{{ page.menu }}</a>
 {% endfor %}
+<a class="level-item scrollToTop">{{ "SCROLL_TO_TOP"|t }}</a>

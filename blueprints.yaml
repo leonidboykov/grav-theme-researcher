@@ -1,15 +1,15 @@
-name: iBrain Ltd
-version: 0.1.0
+name: iBrain Tech
+version: 0.2.0
 description: Exclusive theme for iBrain Ltd
 icon: code
 author:
   name: Leonid Boykov
   email: leonid.v.boykov@gmail.com
-homepage: https://github.com/ibrainltd/ibrainltd-theme
-demo: http://localhost.dev
+homepage: https://github.com/ibraintech/grav-theme-ibraintech
+demo: https://i-brain.tech
 keywords: grav, theme, responsive
-bugs: https://github.com/ibrainltd/ibrainltd-theme/issues
-readme: https://github.com/ibrainltd/ibrainltd-theme/blob/develop/README.md
+bugs: https://github.com/ibraintech/grav-theme-ibraintech/issues
+readme: https://github.com/ibraintech/grav-theme-ibraintech/blob/develop/README.md
 license: MIT
 
 form:
