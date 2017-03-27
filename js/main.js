@@ -12,7 +12,4 @@ $(document).ready(function () {
     $('html, body').animate({scrollTop : 0}, 800);
     return false;
   });
-
-  // Initialize sliders
-  $(".owl-carousel-partners").owlCarousel();
 });
