@@ -9,3 +9,13 @@ configuration, and general usage of this theme.
 ## Description
 
 Exclusive theme for iBrain Ltd
+
+## Build theme
+
+**Compile Sass**
+
+    npm run sass
+
+**Watch Sass**
+
+    npm run sass-watch

@@ -116,3 +116,28 @@ main {
     }
   }
 }
+
+// Colors
+.hero.is-light {
+  .title {
+    color: #186ca4;
+  }
+  .content {
+    color: #13214a;
+    strong {
+      color: #13214a;
+    }
+  }
+}
+
+// .hero.is-white {
+//   .title {
+//     color: #13214a;
+//   }
+//   .content {
+//     color: #13214a;
+//     strong {
+//       color: #13214a;
+//     }
+//   }
+// }
