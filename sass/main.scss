@@ -118,7 +118,8 @@ main {
 }
 
 // Colors
-.hero.is-light {
+.hero.is-lightblue {
+  background: $lightblue;
   .title {
     color: #186ca4;
   }
@@ -129,15 +130,3 @@ main {
     }
   }
 }
-
-// .hero.is-white {
-//   .title {
-//     color: #13214a;
-//   }
-//   .content {
-//     color: #13214a;
-//     strong {
-//       color: #13214a;
-//     }
-//   }
-// }

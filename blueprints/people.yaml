@@ -39,6 +39,7 @@ form:
               options:
                 'white': 'White'
                 'light': 'Light'
+                'lightblue': 'Light Blue'
                 'primary': 'Primary'
                 'info': 'Info'
                 'success': 'Success'
