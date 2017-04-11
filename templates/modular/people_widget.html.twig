@@ -20,7 +20,7 @@
               </figure>
               <div class="card-content">
                 <div class="media-content">
-                  <p class="title is-4">{{ member.name }}</p>
+                  <p class="title is-4">{% if member.name_short != "" %}{{ member.name_short }}{% else %}{{ member.name }}{% endif %}</p>
                   <p class="subtitle heading is-6">{{ member.job }}</p>
                   <p>{{ member.short_description }}</p>
                 </div>

@@ -77,6 +77,9 @@ form:
                 .name:
                   type: text
                   label: Name
+                .name_short:
+                  type: text
+                  label: Short Name
                 .job:
                   type: text
                   label: Job

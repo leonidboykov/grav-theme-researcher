@@ -10,11 +10,11 @@
         {% endif %}
 				{% for child in collection %}
         <div class="box">
-          <article class="media">
-            <div class="media-left">
-              <figure class="image is-128by128" ><img src="{{ (child.media.images|first).url }}" alt="Картинка" style="max-height:200px;max-width:200px"></figure>
+          <div class="columns">
+            <div class="column is-3">
+              <img src="{{ (child.media.images|first).url }}" alt="{{ child.title }}">
             </div>
-            <div class="media-content">
+            <div class="column">
               <h3 class="title is-3">{{ child.title }}</h3>
               <h4 class="subtitle is-5"><span class="icon"><i class="fa fa-calendar"></i></span> {{ child.date|date('d-m-Y') }}</h4>
               <div class="content">
@@ -29,7 +29,7 @@
                   </div>
               </nav>
             </div>
-          </article>
+          </div>
         </div>
 			  {% endfor %}
         {% if config.plugins.pagination.enabled and collection.params.pagination %}
