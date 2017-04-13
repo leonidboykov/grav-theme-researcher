@@ -45,6 +45,32 @@ en:
       CONTINUE_READING: Continue reading...
       NEXT_POST: Next Post
       PREV_POST: Previous Post
+  PEOPLE:
+    MEMBER:
+      FULL_NAME:
+        LABEL: Full Name
+        PLACEHOLDER: John Doe
+      SHORT_NAME:
+        LABEL: Short Name
+        PLACEHOLDER: J. Doe
+      JOB:
+        LABEL: Job
+        PLACEHOLDER: Lead Developer
+      EMAIL:
+        LABEL: Email
+        PLACEHOLDER: user@example.com
+        HELP: This filed is protected against spam bots
+      FULL_DESCRIPTION:
+        LABEL: Full Description
+      SHORT_DESCRIPTION:
+        LABEL: Short Description
+        PLACEHOLDER: Time traveler
+      AVATAR:
+        LABEL: Photo
+      SHOW_ON_INDEX:
+        LABEL: Show on Home page
+      PHOTOS:
+        LABEL: Photos
   ERROR: Error
 
 ru:
@@ -88,7 +114,7 @@ ru:
   PUBLICATIONS:
     FILE_ICON:
       LABEL: Иконка файла
-      HELP: FontAwesome иконка публикуемого файла (fa-<type>-o)
+      HELP: Иконка FontAwesome публикуемого файла (fa-<type>-o)
   BLOG:
     ITEM:
       CONTINUE_READING: Читать далее...

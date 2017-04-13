@@ -1,4 +1,4 @@
-{% set people = page.find(page.header.get_people_from) %}
+{% set people = page.find(page.header.get_people_from).collection() %}
 
 <section class="hero is-{{ page.header.section_size }} is-{{ page.header.section_style }}">
   <div class="hero-body">
@@ -7,22 +7,22 @@
         <h2 class="title is-2 has-text-{{ page.header.title_position }}">{{ page.title }}</h2>
       {% endif %}
       <div class="columns is-multiline">
-        {% for member in people.header.people %}
-        {% if member.show_on_index %}
+        {% for member in people %}
+        {% if member.header.show_on_index %}
           <div class="column is-one-third-tablet is-one-quarter-desktop">
             <div class="card is-fullwidth">
               <figure class="image is-1by1">
-                {% if people.media[member.photo] %}
-                {{ people.media[member.photo].html }}
+                {% if member.header.photo %}
+                {{ member.media[member.header.photo].html }}
                 {% else %}
                 <img src="//placehold.it/270?text=no+photo" />
                 {% endif %}
               </figure>
               <div class="card-content">
                 <div class="media-content">
-                  <p class="title is-4">{% if member.name_short != "" %}{{ member.name_short }}{% else %}{{ member.name }}{% endif %}</p>
-                  <p class="subtitle heading is-6">{{ member.job }}</p>
-                  <p>{{ member.short_description }}</p>
+                  <p class="title is-4">{% if member.header.title_short %}{{ member.header.title_short }}{% else %}{{ member.title }}{% endif %}</p>
+                  <p class="subtitle heading is-6">{{ member.header.job }}</p>
+                  <p>{{ member.header.short_description }}</p>
                 </div>
               </div>
             </div>

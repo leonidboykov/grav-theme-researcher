@@ -1,10 +1,10 @@
-title: Blog
+title: Team
 '@extends':
     type: default
     context: blueprints://pages
-child_type: item
+child_type: member
 
-title: Blog
+title: Team
 rules:
   slug:
     pattern: "[a-z][a-z0-9_\-]+"
@@ -21,7 +21,7 @@ form:
             overrides:
               fields:
                 header.child_type:
-                  default: item
+                  default: member
         section:
           type: tab
           title: TABS.SECTION
@@ -69,56 +69,3 @@ form:
                 'left': OBJECT_POSITION.LEFT
                 'centered': 'OBJECT_POSITION.CENTER'
                 'right': 'OBJECT_POSITION.RIGHT'
-        blog:
-          type: tab
-          title: Blog List
-          fields:
-            header.content.items:
-              type: textarea
-              yaml: true
-              label: Items
-              default: '@self.children'
-            header.content.limit:
-              type: text
-              label: Max Item Count
-              default: 5
-              validate:
-                required: true
-                type: int
-                min: 1
-            header.content.order.by:
-              type: select
-              label: Order By
-              default: date
-              options:
-                folder: Folder
-                title: Title
-                date: Date
-                default: Default
-            header.content.order.dir:
-              type: select
-              label: Order
-              default: desc
-              options:
-                asc: Ascending
-                desc: Descending
-            header.content.pagination:
-              type: toggle
-              label: Pagination
-              highlight: 1
-              default: 1
-              options:
-                1: PLUGIN_ADMIN.ENABLED
-                0: PLUGIN_ADMIN.DISABLED
-              validate:
-                type: bool
-            header.content.url_taxonomy_filters:
-              type: toggle
-              label: URL Taxonomy Filters
-              highlight: 1
-              default: 1
-              options:
-                1: PLUGIN_ADMIN.ENABLED
-                0: PLUGIN_ADMIN.DISABLED
-              validate:
-                type: bool
