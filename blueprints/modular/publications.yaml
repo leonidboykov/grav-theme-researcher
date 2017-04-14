@@ -76,6 +76,10 @@ form:
               style: vertical
               label: Publications
               fields:
+                .text:
+                  type: text
+                  label: Title
+                  placeholder: Name of publication
                 .header:
                   type: text
                   label: Author
@@ -123,11 +127,6 @@ form:
                   type: link
                   label: Button link
                   placeholder: http(s)://example.com
-                .text:
-                  type: editor
-                  label: Title
-                  autofocus: true
-                  placeholder: Name of publication
                 .uploaded_file:
                   type: filepicker
                   label: Select a file
