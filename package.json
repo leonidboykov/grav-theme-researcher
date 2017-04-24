@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/ibraintech/grav-theme-ibraintech#readme",
   "devDependencies": {
-    "node-sass": "^4.5.0"
+    "node-sass": "^4.5.2"
   },
   "dependencies": {
     "bulma": "^0.4.0"
