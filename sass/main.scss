@@ -130,3 +130,19 @@ main {
     }
   }
 }
+
+// Dropdown
+.dropdown {
+  // box-shadow: 0 0 8px #777;
+  display: none;
+  left: -75px;
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+
+  min-width: 278px;
+}
+
+.dropdown.is-open {
+  display: block;
+}

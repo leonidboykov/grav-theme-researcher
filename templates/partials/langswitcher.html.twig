@@ -2,6 +2,13 @@
 {% for key in langswitcher.languages %}
   {% if key != langswitcher.current %}
     {% set lang_url = base_url_simple ~ langobj.getLanguageURLPrefix(key)~langswitcher.page_route~page.urlExtension ?: '/' %}
-    <a class="nav-item" href="{{ lang_url ~ uri.params }}">{{  native_name(key)[:2]|capitalize }}</a></li>
+    <p class="control">
+      <a class="button is-outlined" href="{{ lang_url }}">
+        <span class="icon">
+          <i class="fa fa-globe"></i>
+        </span>
+        <span>{{ native_name(key)[:2]|capitalize }}</span>
+      </a>
+    </p>
   {% endif %}
 {% endfor %}

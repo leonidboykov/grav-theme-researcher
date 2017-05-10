@@ -1,8 +1,8 @@
 <nav class="nav has-shadow">
   <div class="container">
     <div class="nav-left">
-      <a class="nav-item is-brand is-hidden-mobile" href="#"><img src="{{ url('theme://images/logo_color.svg') }}" alt="iBrain Ltd" style="min-height:85px;height:30px;"></a>
-      <a class="nav-item is-brand is-hidden-tablet" href="#"><img src="{{ url('theme://images/logo_dark.svg') }}" alt="iBrain Ltd" style="height:150px"></a>
+      <a class="nav-item is-brand is-hidden-mobile" href="{{ base_url }}"><img src="{{ url('theme://images/logo_color.svg') }}" alt="iBrain Ltd" style="min-height:85px;height:30px;"></a>
+      <a class="nav-item is-brand is-hidden-tablet" href="{{ base_url }}"><img src="{{ url('theme://images/logo_dark.svg') }}" alt="iBrain Ltd" style="height:150px"></a>
     </div>
     <span id="nav-toggle" class="nav-toggle">
       <span></span>
@@ -11,10 +11,15 @@
     </span>
     <div id="nav-menu" class="nav-right nav-menu">
       {% for page in pages.children.visible %}
-        {% set current_page = (page.active or page.activeChild) ? 'is-active' : '' %}
+        {% set current_page = (page.active or page.activeChild) ? "is-active" : "" %}
         <a class="nav-item {{ current_page }}" href="{{ page.url }}">{{ page.menu }}</a>
       {% endfor %}
-      {% include 'partials/langswitcher.html.twig' %}
+      <div class="nav-item">
+        <div class="field is-grouped">
+        {% include "partials/langswitcher.html.twig" %}
+        {% include "partials/searchfield.html.twig" %}
+        </div>
+      </div>
     </div>
   </div>
 </nav>

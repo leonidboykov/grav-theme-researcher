@@ -1,0 +1,47 @@
+{% set min_chars = config.get('plugins.simplesearch.min_query_length', 3) %}
+
+<div class="control">
+  <button id="search-toggle" class="button" type="button">
+    <span class="icon is-small">
+      <i class="fa fa-search"></i>
+    </span>
+  </button>
+
+  <div id="search-dropdown" class="box dropdown">
+    <form name="search" onSubmit="return validateSearch(event);">
+      <div class="field has-addons">
+        <p class="control">
+          <input
+            name="searchfield"
+            class="input is-fullwidth"
+            type="text"
+            placeholder="{{ 'PLUGIN_SIMPLESEARCH.SEARCH_PLACEHOLDER'|t }}"
+            value="{{ query }}"
+            data-search-input="{{ base_url }}{{ config.plugins.simplesearch.route == '@self' ? '' : (config.plugins.simplesearch.route == '/' ? '' : config.plugins.simplesearch.route) }}/query"
+          >
+        </p>
+        {% if config.plugins.simplesearch.display_button %}
+        <p class="control">
+          <button class="button" type="submit">
+            <span class="icon is-small">
+              <i class="fa fa-search"></i>
+            </span>
+          </button>
+        </p>
+        {% endif %}
+      </div>
+    </form>
+    <script>
+    function validateSearch(event) {
+        var input = document.forms["search"]["searchfield"];
+        var target = input.getAttribute('data-search-input');
+        if (input.value.length >= {{ min_chars }}) {
+          event.preventDefault();
+          window.location.href = target + '{{ config.system.param_sep }}' + input.value;
+        } else {
+          event.preventDefault();
+        }
+    }
+    </script>
+  </div>
+</div>

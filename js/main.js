@@ -1,8 +1,8 @@
 $(document).ready(function () {
-  // Toggle function
-  var $toggle = $('#nav-toggle');
+  // Toggle nav
+  var $nav_toggle = $('#nav-toggle');
   var $menu = $('#nav-menu');
-  $toggle.click(function() {
+  $nav_toggle.click(function() {
     $(this).toggleClass('is-active');
     $menu.toggleClass('is-active');
   });
@@ -12,4 +12,13 @@ $(document).ready(function () {
     $('html, body').animate({scrollTop : 0}, 800);
     return false;
   });
+
+  // Toggle search dropdown
+  var $search_toggle = $('#search-toggle');
+  var $search_dropdown = $('#search-dropdown');
+
+  $search_toggle.click(function() {
+    $search_dropdown.toggleClass('is-open');
+  });
+
 });
