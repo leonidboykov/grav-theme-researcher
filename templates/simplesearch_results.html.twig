@@ -18,7 +18,7 @@
         {% for page in search_results %}
         <br />
         <div class="box">
-          <h2 class="title is-2">{{ page.title }}</h2>
+          <h2 class="title is-2"><a href="{{ page.url }}">{{ page.title }}</a></h2>
           <p class="content">
             {{ page.summary }}
           </p>
