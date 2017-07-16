@@ -5,11 +5,11 @@ icon: code
 author:
   name: Leonid Boykov
   email: leonid.v.boykov@gmail.com
-homepage: https://github.com/ibraintech/grav-theme-ibraintech
+homepage: https://github.com/leonidboykov/grav-theme-ibraintech
 demo: https://i-brain.tech
 keywords: grav, theme, responsive
-bugs: https://github.com/ibraintech/grav-theme-ibraintech/issues
-readme: https://github.com/ibraintech/grav-theme-ibraintech/blob/develop/README.md
+bugs: https://github.com/leonidboykov/grav-theme-ibraintech/issues
+readme: https://github.com/leonidboykov/grav-theme-ibraintech/blob/develop/README.md
 license: MIT
 
 form:

@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibraintech/grav-theme-ibraintech.git"
+    "url": "git+https://github.com/leonidboykov/grav-theme-ibraintech.git"
   },
   "keywords": [
     "grav",
@@ -20,9 +20,9 @@
   "author": "Leonid Boykov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ibraintech/grav-theme-ibraintech/issues"
+    "url": "https://github.com/leonidboykov/grav-theme-ibraintech/issues"
   },
-  "homepage": "https://github.com/ibraintech/grav-theme-ibraintech#readme",
+  "homepage": "https://github.com/leonidboykov/grav-theme-ibraintech#readme",
   "devDependencies": {
     "node-sass": "^4.5.2"
   },

@@ -1,6 +1,6 @@
 # iBrain Tech Theme
 
-[![Dependencies](https://david-dm.org/ibraintech/grav-theme-ibraintech.svg)](https://david-dm.org/ibraintech/grav-theme-ibraintech)
+[![Dependencies](https://david-dm.org/leonidboykov/grav-theme-ibraintech.svg)](https://david-dm.org/leonidboykov/grav-theme-ibraintech)
 
 The **iBrain Tech** Theme is for [Grav CMS](http://github.com/getgrav/grav).
 This README.md file should be modified to describe the features, installation,
