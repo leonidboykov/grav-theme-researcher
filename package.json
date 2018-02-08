@@ -1,32 +1,40 @@
 {
-  "name": "ibraintech",
+  "name": "researcher",
   "version": "1.1.0",
-  "description": "Exclusive theme for iBrain Tech",
-  "main": "index.js",
+  "description": "Researcher Grav theme",
+  "main": "sass/main.sass",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass --output-style compressed --inlcude-path sass sass/main.scss css/main.css",
-    "sass-watch": "node-sass --watch --inlcude-path sass sass/main.scss css/main.css"
+    "build": "npm run build-clean && npm run build-sass && npm run build-postcss",
+    "build-clean": "rimraf css",
+    "build-postcss": "postcss --use autoprefixer cssnano css-mqpacker --map false --output css/main.css static/css/main.css",
+    "build-sass": "node-sass --output-style compressed --source-map false sass/main.sass css/main.css",
+    "serve": "npm run build-sass -- --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leonidboykov/grav-theme-ibraintech.git"
+    "url": "git+https://github.com/leonidboykov/grav-theme-researcher.git"
   },
   "keywords": [
     "grav",
     "theme",
-    "responsive"
+    "responsive",
+    "flexbox"
   ],
   "author": "Leonid Boykov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leonidboykov/grav-theme-ibraintech/issues"
+    "url": "https://github.com/leonidboykov/grav-theme-researcher/issues"
   },
-  "homepage": "https://github.com/leonidboykov/grav-theme-ibraintech#readme",
+  "homepage": "https://github.com/leonidboykov/grav-theme-researcher#readme",
   "devDependencies": {
-    "node-sass": "^4.5.2"
+    "autoprefixer": "^7.2.5",
+    "css-mqpacker": "^6.0.2",
+    "cssnano": "^3.10.0",
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^5.0.0",
+    "rimraf": "^2.6.2"
   },
   "dependencies": {
-    "bulma": "^0.4.0"
+    "bulma": "^0.6.2"
   }
 }

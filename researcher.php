@@ -3,7 +3,7 @@ namespace Grav\Theme;
 
 use Grav\Common\Theme;
 
-class IBrainTech extends Theme
+class Researcher extends Theme
 {
   // Access plugin events in this class
 }
