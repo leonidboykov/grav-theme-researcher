@@ -1,24 +1,19 @@
-$(document).ready(function () {
-  // Toggle nav
-  var $nav_toggle = $('#nav-toggle');
-  var $menu = $('#nav-menu');
-  $nav_toggle.click(function() {
-    $(this).toggleClass('is-active');
-    $menu.toggleClass('is-active');
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-  // Scroll to top button
-  $('.scrollToTop').click(function() {
-    $('html, body').animate({scrollTop : 0}, 800);
-    return false;
-  });
-
-  // Toggle search dropdown
-  var $search_toggle = $('#search-toggle');
-  var $search_dropdown = $('#search-dropdown');
-
-  $search_toggle.click(function() {
-    $search_dropdown.toggleClass('is-open');
-  });
-
+  // Check if there are any nav burgers
+  if ($navbarBurgers.length > 0) {
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', () => {
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  }
 });

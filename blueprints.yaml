@@ -17,12 +17,42 @@ form:
   fields:
     settings:
       type: section
-      title: SETTINGS.LABEL
+      title: RESEARCHER_THEME.SETTINGS.LABEL
       underline: true
       fields:
         initial.date:
           type: datetime
           label: SETTINGS.YEAR_OF_FOUNDATION
-          help: SETTINGS.YEAR_OF_FOUNDATION.HELP
+          help: RESEARCHER_THEME.SETTINGS.YEAR_OF_FOUNDATION.HELP
           default: 01-01-2016 00:00
           validate.required: true
+        navigation.section_color:
+          type: select
+          label: RESEARCHER_THEME.SETTINGS.NAVBAR.COLOR
+          classes: fancy
+          default: primary
+          options:
+            default: none
+            light: light
+            primary: primary
+            info: info
+            link: link
+            success: success
+            warning: warning
+            danger: danger
+            dark: dark
+        footer.section_color:
+          type: select
+          label: RESEARCHER_THEME.SETTINGS.FOOTER.COLOR
+          classes: fancy
+          default: primary
+          options:
+            default: none
+            light: light
+            primary: primary
+            info: info
+            link: link
+            success: success
+            warning: warning
+            danger: danger
+            dark: dark

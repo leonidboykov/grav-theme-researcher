@@ -1,40 +1,206 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <div class="content">
+  <section class="hero is-{{ header.section_height }} is-{{ header.section_color }}">
+    <div class="hero-body">
+      <div class="container">
         <div class="columns">
-          <div class="column is-2 has-text-centered">
-            {% if page.media[page.header.photo] %}
-            {{ page.media[page.header.photo].html }}
-            {% else %}
-            <img src="//placehold.it/162?text=NO+PHOTO" />
-            {% endif %}
+          <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image">{{ page.media[header.resume_basics_image].html }}</figure>
+              </div>
+              <div class="card-content">
+                <h1 class="title is-3">{{ header.resume_basics_name }}</h1>
+                <p class="subtitle is-6 has-text-grey">{{ header.resume_basics_label }}</p>
+                {% if header.resume_basics_email %}
+                  {% include 'partials/card-media.html.twig' with { 'icon': 'envelope', 'data': header.resume_basics_email|safe_email } %}
+                {% endif %}
+                {% if header.resume_basics_email %}
+                  {% include 'partials/card-media.html.twig' with { 'icon': 'globe', 'data': header.resume_basics_url } %}
+                {% endif %}
+                {% if header.resume_basics_phone %}
+                  {% include 'partials/card-media.html.twig' with { 'icon': 'phone', 'data': header.resume_basics_phone } %}
+                {% endif %}
+              </div>
+              {% if header.resume_profiles %}
+                <div class="card-footer">
+                {% for profile in header.resume_profiles %}
+                  <a class="card-footer-item" href="{{ profile.url }}">
+                    <span class="icon"><i class="fab fa-{{ profile.network|lower }}"></i></span>
+                    {% if header.resume_profiles|length <= 2 %}{{ profile.network }}{% endif %}
+                  </a>
+                {% endfor %}
+                </div>
+              {% endif %}
+            </div>
           </div>
           <div class="column">
-            <h3 class="title is-3">{{ page.title }}</h3>
-            <h4 class="subtitle heading is-5">{{ page.header.job }}</h4>
-            {% if page.header.email %}
-            {{ page.header.email|safe_email }}
-            {% endif %}
-            <nav class="level">
-              <div class="level-left">
-                {% for social in page.header.social %}
-                <a class="level-item" href="{{ social.link }}">
-                  <span class="icon"><i class="fa fa-{{ social.icon }}"></i></span>
-                </a>
-                {% endfor %}
-              </div>
-            </nav>
+            <div class="columns is-multiline">
+              {% if header.resume_basics_summary %}
+                <div class="column is-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.BASICS.SECTION'|t }}</p>
+                    </div>
+                    <div class="card-content">
+                      <div class="content">{{ header.resume_basics_summary|markdown }}</div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if header.resume_work %}
+                <div class="column is-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.WORK.SECTION'|t }}</p>
+                    </div>
+                    <div class="card-content">
+                      {% for work in header.resume_work %}
+                      <div class="media">
+                        <div class="media-content">
+                          <strong>{{ work.position }}</strong>, {% if work.url %}<a href="{{ work.url }}">{% endif %}{{ work.name }}{% if work.url %}</a>{% endif %}
+                          <div class="is-size-7 has-text-grey">
+                            {{ work.start_date|date("M, Y") }} &mdash;
+                            {% if work.end_date %}
+                              {{ work.end_date|date("M, Y") }}
+                            {% else %}
+                              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.PRESENT'|t }}
+                            {% endif %}
+                          </div>
+                          {% if work.summary or work.highlights %}
+                            <br>
+                            <div class="content">
+                              {% if work.summary %}{{ work.summary }}{% endif %}
+                              {% if work.highlights %}
+                                <ul>
+                                  {% for highlight in work.highlights %}
+                                    <li>{{ highlight.item }}</li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            <div>
+                          {% endif %}
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if header.resume_volunteer %}
+                <div class="column is-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.SECTION'|t }}</p>
+                    </div>
+                    <div class="card-content">
+                      {% for volunteer in header.resume_volunteer %}
+                      <div class="media">
+                        <div class="media-content">
+                          <strong>{{ volunteer.position }}</strong>, {% if volunteer.url %}<a href="{{ volunteer.url }}">{% endif %}{{ volunteer.name }}{% if volunteer.url %}</a>{% endif %}
+                          <div class="is-size-7 has-text-grey">
+                            {{ volunteer.start_date|date("M, Y") }} &mdash;
+                            {% if volunteer.end_date %}
+                              {{ volunteer.end_date|date("M, Y") }}
+                            {% else %}
+                              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.PRESENT'|t }}
+                            {% endif %}
+                          </div>
+                          {% if volunteer.summary or volunteer.highlights %}
+                            <br>
+                            <div class="content">
+                              {% if volunteer.summary %}{{ volunteer.summary }}{% endif %}
+                              {% if volunteer.highlights %}
+                                <ul>
+                                  {% for highlight in volunteer.highlights %}
+                                    <li>{{ highlight.item }}</li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            <div>
+                          {% endif %}
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if header.resume_education %}
+                <div class="column is-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.EDUCATION.SECTION'|t }}</p>
+                    </div>
+                    <div class="card-content">
+                      {% for education in header.resume_education %}
+                      <div class="media">
+                        <div class="media-content">
+                          <strong>{{ education.area }}, {{ education.study_type }}</strong>, {{ education.institution }}
+                          <div class="is-size-7 has-text-grey">
+                            {{ education.start_date|date("M, Y") }} &mdash;
+                            {% if education.end_date %}
+                              {{ education.end_date|date("M, Y") }}
+                            {% else %}
+                              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.PRESENT'|t }}
+                            {% endif %}
+                          </div>
+                          {% if education.gpa or education.courses %}
+                            <br>
+                            <div class="content">
+                              {% if education.gpa %}{{ education.gpa }}{% endif %}
+                              {% if education.courses %}
+                                <ul>
+                                  {% for course in education.courses %}
+                                    <li>{{ course.item }}</li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            <div>
+                          {% endif %}
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if header.resume_awards %}
+                <div class="column is-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.AWARDS.SECTION'|t }}</p>
+                    </div>
+                    <div class="card-content">
+                      {% for award in header.resume_awards %}
+                      <div class="media">
+                        <div class="media-content">
+                          <strong>{{ award.title }}</strong>, {{ award.awarder }}
+                          <div class="is-size-7 has-text-grey">
+                            {{ award.date|date("M, Y") }}
+                          </div>
+                          {% if award.summary %}
+                            <br>
+                            <div class="content">
+                              {{ award.summary }}
+                            <div>
+                          {% endif %}
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
           </div>
         </div>
       </div>
-      <div class="content">
-        {{ page.content }}
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 {% endblock %}

@@ -1,25 +1,23 @@
-<nav class="nav has-shadow">
-  <div class="container">
-    <div class="nav-left">
-      <a class="nav-item is-brand is-hidden-mobile" href="{{ base_url }}"><img src="{{ url('theme://images/logo_color.svg') }}" alt="iBrain Ltd" style="min-height:85px;height:30px;"></a>
-      <a class="nav-item is-brand is-hidden-tablet" href="{{ base_url }}"><img src="{{ url('theme://images/logo_dark.svg') }}" alt="iBrain Ltd" style="height:150px"></a>
-    </div>
-    <span id="nav-toggle" class="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div id="nav-menu" class="nav-right nav-menu">
-      {% for page in pages.children.visible %}
-        {% set current_page = (page.active or page.activeChild) ? "is-active" : "" %}
-        <a class="nav-item {{ current_page }}" href="{{ page.url }}">{{ page.menu }}</a>
-      {% endfor %}
-      <div class="nav-item">
-        <div class="field is-grouped">
-        {% include "partials/langswitcher.html.twig" %}
-        {% include "partials/searchfield.html.twig" %}
-        </div>
+<div class="container">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <!-- TODO: Add Branding -->
+      <!-- TODO: Add language switcher -->
+      <!-- TODO: Not sure about clicked state -->
+      <a class="navbar-item" href="{{ base_url }}">SPACE</a>
+      <div class="navbar-burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
-  </div>
-</nav>
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-end">
+        {% for page in pages.children.visible %}
+        {% set current_page = (page.active or page.activeChild) ? "is-active" : "" %}
+          <a class="navbar-item {{ current_page }}" href="{{ page.url }}">{{ page.menu }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+</div>

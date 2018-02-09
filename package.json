@@ -6,8 +6,8 @@
   "scripts": {
     "build": "npm run build-clean && npm run build-sass && npm run build-postcss",
     "build-clean": "rimraf css",
-    "build-postcss": "postcss --use autoprefixer cssnano css-mqpacker --map false --output css/main.css static/css/main.css",
-    "build-sass": "node-sass --output-style compressed --source-map false sass/main.sass css/main.css",
+    "build-postcss": "postcss --use autoprefixer cssnano css-mqpacker --map false --output css/main.css css/main.css",
+    "build-sass": "node-sass --output-style compressed sass/main.sass css/main.css",
     "serve": "npm run build-sass -- --watch"
   },
   "repository": {

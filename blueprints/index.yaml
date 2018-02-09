@@ -1,25 +1,29 @@
-title: Team
+title: Index
 extends@:
-  type: default
-  context: blueprints://pages
-child_type: member
+  type: modular
+  context: blueprints://modular
 
 form:
   fields:
     tabs:
+      type: tabs
       active: 1
       fields:
         content:
+          type: tab
+          title: Content
           fields:
             header.title:
               type: text
               autofocus: true
               style: horizontal
               label: PLUGIN_ADMIN.TITLE
-            content:
-              unset@: true
-            header.media_order:
-              unset@: true
+            header.sub_title:
+              type: text
+              autofocus: true
+              style: horizontal
+              label: RESEARCHER_THEME.PAGES.SUB_TITLE
+              ordering@: header.title
         section:
           type: tab
           title: Section
@@ -27,10 +31,3 @@ form:
           import@:
             type: partials/section
             context: blueprints://
-        advanced:
-          type: tab
-          fields:
-            overrides:
-              fields:
-                header.child_type:
-                  default: member
