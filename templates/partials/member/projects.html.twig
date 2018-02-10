@@ -1,0 +1,55 @@
+<div class="column is-12">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.PROJECTS.SECTION'|t }} ({{ header.resume_projects|length }})</div>
+      <div class="card-header-icon">
+        <span class="icon">
+          <i class="fas fa-code" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+    <div class="card-content">
+      {% for project in header.resume_projects|sort_by_key('start_date')|reverse %}
+      <div class="media">
+        <div class="media-content">
+          <strong>{{ project.name }}, {{ project.roles|join(', ') }}</strong>
+          {% if project.url %}
+            <a href="{{ project.url }}">
+              <span class="icon is-small">
+                <i class="fas fa-external-link-square-alt" aria-hidden="true"></i>
+              </span>
+            </a>
+          {% endif %}
+          <div class="is-size-7 has-text-grey">
+            {{ project.start_date|date("jS M, Y") }} &mdash;
+            {% if project.end_date %}
+              {{ project.end_date|date("jS M, Y") }}
+            {% else %}
+              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.PRESENT'|t }}
+            {% endif %} | {{ project.entity }} | {{ project.type }}
+          </div>
+          {% if project.description or project.highlights %}
+            <div class="content">
+              {% if project.description %}{{ project.description }}{% endif %}
+              {% if project.highlights %}
+                <ul>
+                  {% for highlight in project.highlights %}
+                    <li>{{ highlight.item }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          {% endif %}
+          {% if project.keywords %}
+            <div class="tags">
+              {% for keyword in project.keywords %}
+                <span class="tag is-{{ theme_config.primary_color }}"><i class="fas fa-tags"></i>&nbsp;{{ keyword }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

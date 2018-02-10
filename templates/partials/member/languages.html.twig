@@ -1,0 +1,21 @@
+<div class="column is-12">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.LANGUAGES.SECTION'|t }}</div>
+      <div class="card-header-icon">
+        <span class="icon">
+          <i class="fas fa-language" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+    <div class="card-content">
+      {% for language in header.resume_languages %}
+        <div class="media">
+          <div class="media-content">
+            <strong>{{ language.language }}</strong>: {{ language.fluency }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

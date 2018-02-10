@@ -6,6 +6,7 @@ en:
         PRIMARY: Primary Color
     PAGES:
       SUB_TITLE: Subtitle
+      THUMBNAIL: Thumbnail
       SECTION:
         HEIGHT: Section Height
         COLOR: Section Color
@@ -109,4 +110,7 @@ en:
           TYPE: Type
     FRONTEND:
       MEMBER:
+        EMAIL: Email
+        HOMEPAGE: Homepage
         PRESENT: present
+      LINK: Link

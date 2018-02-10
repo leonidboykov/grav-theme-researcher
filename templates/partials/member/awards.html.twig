@@ -1,7 +1,12 @@
 <div class="column is-12">
   <div class="card">
     <div class="card-header">
-      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.AWARDS.SECTION'|t }}</p>
+      <div class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.AWARDS.SECTION'|t }}  ({{ header.resume_awards|length }})</div>
+      <div class="card-header-icon">
+        <span class="icon">
+          <i class="fas fa-trophy" aria-hidden="true"></i>
+        </span>
+      </div>
     </div>
     <div class="card-content">
       {% for award in header.resume_awards %}
@@ -12,7 +17,6 @@
             {{ award.date|date("M, Y") }}
           </div>
           {% if award.summary %}
-            <br>
             <div class="content">
               {{ award.summary }}
             <div>

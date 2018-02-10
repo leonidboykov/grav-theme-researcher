@@ -1,10 +1,15 @@
 <div class="column is-12">
   <div class="card">
     <div class="card-header">
-      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.SECTION'|t }}</p>
+      <div class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.SECTION'|t }}</div>
+      <div class="card-header-icon">
+        <span class="icon">
+          <i class="fas fa-handshake" aria-hidden="true"></i>
+        </span>
+      </div>
     </div>
     <div class="card-content">
-      {% for volunteer in header.resume_volunteer %}
+      {% for volunteer in header.resume_volunteer|sort_by_key('start_date')|reverse %}
       <div class="media">
         <div class="media-content">
           <strong>{{ volunteer.position }}</strong>, {% if volunteer.url %}<a href="{{ volunteer.url }}">{% endif %}{{ volunteer.name }}{% if volunteer.url %}</a>{% endif %}
@@ -17,7 +22,6 @@
             {% endif %}
           </div>
           {% if volunteer.summary or volunteer.highlights %}
-            <br>
             <div class="content">
               {% if volunteer.summary %}{{ volunteer.summary }}{% endif %}
               {% if volunteer.highlights %}

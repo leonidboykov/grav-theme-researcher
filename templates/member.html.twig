@@ -6,33 +6,11 @@
       <div class="container">
         <div class="columns">
           <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image">{{ page.media[header.resume_basics_image].html }}</figure>
-              </div>
-              <div class="card-content">
-                <h1 class="title is-3">{{ header.resume_basics_name }}</h1>
-                <p class="subtitle is-6 has-text-grey">{{ header.resume_basics_label }}</p>
-                {% if header.resume_basics_email %}
-                  {% include 'partials/card-media.html.twig' with { 'icon': 'envelope', 'data': header.resume_basics_email|safe_email } %}
-                {% endif %}
-                {% if header.resume_basics_email %}
-                  {% include 'partials/card-media.html.twig' with { 'icon': 'globe', 'data': header.resume_basics_url } %}
-                {% endif %}
-                {% if header.resume_basics_phone %}
-                  {% include 'partials/card-media.html.twig' with { 'icon': 'phone', 'data': header.resume_basics_phone } %}
-                {% endif %}
-              </div>
-              {% if header.resume_profiles %}
-                <div class="card-footer">
-                {% for profile in header.resume_profiles %}
-                  <a class="card-footer-item" href="{{ profile.url }}">
-                    <span class="icon"><i class="fab fa-{{ profile.network|lower }}"></i></span>
-                    {% if header.resume_profiles|length <= 2 %}{{ profile.network }}{% endif %}
-                  </a>
-                {% endfor %}
-                </div>
-              {% endif %}
+            <div class="columns is-multiline">
+              {% include 'partials/member/card.html.twig' %}
+              {% if header.resume_languages %}
+                {% include 'partials/member/languages.html.twig' %}
+              {% endif%}
             </div>
           </div>
           <div class="column">
@@ -59,6 +37,18 @@
 
               {% if header.resume_interests %}
                 {% include 'partials/member/interests.html.twig' %}
+              {% endif %}
+
+              {% if header.resume_projects %}
+                {% include 'partials/member/projects.html.twig' %}
+              {% endif %}
+
+              {% if header.resume_references %}
+                {% include 'partials/member/references.html.twig' %}
+              {% endif %}
+
+              {% if header.resume_skills %}
+                {% include 'partials/member/skills.html.twig' %}
               {% endif %}
             </div>
           </div>

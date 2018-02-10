@@ -1,7 +1,12 @@
 <div class="column is-12">
   <div class="card">
     <div class="card-header">
-      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.INTERESTS.SECTION'|t }}</p>
+      <div class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.INTERESTS.SECTION'|t }}</div>
+      <div class="card-header-icon">
+        <span class="icon">
+          <i class="fas fa-lightbulb" aria-hidden="true"></i>
+        </span>
+      </div>
     </div>
     <div class="card-content">
       {% for interest in header.resume_interests %}
@@ -9,7 +14,7 @@
         <div class="media-content">
           <strong>{{ interest.name }}</strong>
           <div class="tags">
-            {% for keyword in interest.keywords|sort %}
+            {% for keyword in interest.keywords %}
             <span class="tag is-{{ theme_config.primary_color }}"><i class="fas fa-tags"></i>&nbsp;{{ keyword }}</span>
             {% endfor %}
           </div>

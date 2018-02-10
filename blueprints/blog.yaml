@@ -1,0 +1,36 @@
+title: Blog
+extends@:
+  type: default
+  context: blueprints://pages
+child_type: post
+
+form:
+  fields:
+    tabs:
+      active: 1
+      fields:
+        content:
+          fields:
+            header.title:
+              type: text
+              autofocus: true
+              style: horizontal
+              label: PLUGIN_ADMIN.TITLE
+            content:
+              unset@: true
+            header.media_order:
+              unset@: true
+        section:
+          type: tab
+          title: Section
+          ordering@: content
+          import@:
+            type: partials/section
+            context: blueprints://
+        advanced:
+          type: tab
+          fields:
+            overrides:
+              fields:
+                header.child_type:
+                  default: post

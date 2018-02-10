@@ -451,12 +451,12 @@ form:
                   style: vertical
                   collapsed: true
                   fields:
-                    # TODO: move this form to Projects blueprint and add reference
-                    #       or add a drop list with /projects
                     .name:
                       type: text
                       label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.NAME
                       placeholder: e.g. The World Wide Web
+                      validate:
+                        required: true
                     .description:
                       type: textarea
                       label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.DESCRIPTION

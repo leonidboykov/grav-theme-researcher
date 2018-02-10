@@ -1,10 +1,15 @@
 <div class="column is-12">
   <div class="card">
     <div class="card-header">
-      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.WORK.SECTION'|t }}</p>
+      <div class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.WORK.SECTION'|t }}</div>
+      <div class="card-header-icon">
+        <span class="icon">
+          <i class="fas fa-briefcase" aria-hidden="true"></i>
+        </span>
+      </div>
     </div>
     <div class="card-content">
-      {% for work in header.resume_work %}
+      {% for work in header.resume_work|sort_by_key('start_date')|reverse %}
       <div class="media">
         <div class="media-content">
           <strong>{{ work.position }}</strong>, {% if work.url %}<a href="{{ work.url }}">{% endif %}{{ work.name }}{% if work.url %}</a>{% endif %}
@@ -17,7 +22,6 @@
             {% endif %}
           </div>
           {% if work.summary or work.highlights %}
-            <br>
             <div class="content">
               {% if work.summary %}{{ work.summary }}{% endif %}
               {% if work.highlights %}
