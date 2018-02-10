@@ -26,24 +26,9 @@ form:
           help: RESEARCHER_THEME.SETTINGS.YEAR_OF_FOUNDATION.HELP
           default: 01-01-2016 00:00
           validate.required: true
-        navigation.section_color:
+        primary_color:
           type: select
-          label: RESEARCHER_THEME.SETTINGS.NAVBAR.COLOR
-          classes: fancy
-          default: primary
-          options:
-            default: none
-            light: light
-            primary: primary
-            info: info
-            link: link
-            success: success
-            warning: warning
-            danger: danger
-            dark: dark
-        footer.section_color:
-          type: select
-          label: RESEARCHER_THEME.SETTINGS.FOOTER.COLOR
+          label: RESEARCHER_THEME.SETTINGS.COLOR.PRIMARY
           classes: fancy
           default: primary
           options:

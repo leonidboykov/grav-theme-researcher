@@ -1,0 +1,37 @@
+<div class="column is-12">
+  <div class="card">
+    <div class="card-header">
+      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.EDUCATION.SECTION'|t }}</p>
+    </div>
+    <div class="card-content">
+      {% for education in header.resume_education %}
+      <div class="media">
+        <div class="media-content">
+          <strong>{{ education.area }}, {{ education.study_type }}</strong>, {{ education.institution }}
+          <div class="is-size-7 has-text-grey">
+            {{ education.start_date|date("M, Y") }} &mdash;
+            {% if education.end_date %}
+              {{ education.end_date|date("M, Y") }}
+            {% else %}
+              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.PRESENT'|t }}
+            {% endif %}
+          </div>
+          {% if education.gpa or education.courses %}
+            <br>
+            <div class="content">
+              {% if education.gpa %}{{ education.gpa }}{% endif %}
+              {% if education.courses %}
+                <ul>
+                  {% for course in education.courses %}
+                    <li>{{ course.item }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            <div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

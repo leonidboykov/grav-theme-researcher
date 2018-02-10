@@ -1,0 +1,37 @@
+<div class="column is-12">
+  <div class="card">
+    <div class="card-header">
+      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.WORK.SECTION'|t }}</p>
+    </div>
+    <div class="card-content">
+      {% for work in header.resume_work %}
+      <div class="media">
+        <div class="media-content">
+          <strong>{{ work.position }}</strong>, {% if work.url %}<a href="{{ work.url }}">{% endif %}{{ work.name }}{% if work.url %}</a>{% endif %}
+          <div class="is-size-7 has-text-grey">
+            {{ work.start_date|date("M, Y") }} &mdash;
+            {% if work.end_date %}
+              {{ work.end_date|date("M, Y") }}
+            {% else %}
+              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.PRESENT'|t }}
+            {% endif %}
+          </div>
+          {% if work.summary or work.highlights %}
+            <br>
+            <div class="content">
+              {% if work.summary %}{{ work.summary }}{% endif %}
+              {% if work.highlights %}
+                <ul>
+                  {% for highlight in work.highlights %}
+                    <li>{{ highlight.item }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            <div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

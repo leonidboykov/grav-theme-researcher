@@ -1,0 +1,37 @@
+<div class="column is-12">
+  <div class="card">
+    <div class="card-header">
+      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.SECTION'|t }}</p>
+    </div>
+    <div class="card-content">
+      {% for volunteer in header.resume_volunteer %}
+      <div class="media">
+        <div class="media-content">
+          <strong>{{ volunteer.position }}</strong>, {% if volunteer.url %}<a href="{{ volunteer.url }}">{% endif %}{{ volunteer.name }}{% if volunteer.url %}</a>{% endif %}
+          <div class="is-size-7 has-text-grey">
+            {{ volunteer.start_date|date("M, Y") }} &mdash;
+            {% if volunteer.end_date %}
+              {{ volunteer.end_date|date("M, Y") }}
+            {% else %}
+              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.PRESENT'|t }}
+            {% endif %}
+          </div>
+          {% if volunteer.summary or volunteer.highlights %}
+            <br>
+            <div class="content">
+              {% if volunteer.summary %}{{ volunteer.summary }}{% endif %}
+              {% if volunteer.highlights %}
+                <ul>
+                  {% for highlight in volunteer.highlights %}
+                    <li>{{ highlight.item }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            <div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

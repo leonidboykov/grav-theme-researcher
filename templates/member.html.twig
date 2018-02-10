@@ -38,164 +38,27 @@
           <div class="column">
             <div class="columns is-multiline">
               {% if header.resume_basics_summary %}
-                <div class="column is-12">
-                  <div class="card">
-                    <div class="card-header">
-                      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.BASICS.SECTION'|t }}</p>
-                    </div>
-                    <div class="card-content">
-                      <div class="content">{{ header.resume_basics_summary|markdown }}</div>
-                    </div>
-                  </div>
-                </div>
+                {% include 'partials/member/basics.html.twig' %}
               {% endif %}
 
               {% if header.resume_work %}
-                <div class="column is-12">
-                  <div class="card">
-                    <div class="card-header">
-                      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.WORK.SECTION'|t }}</p>
-                    </div>
-                    <div class="card-content">
-                      {% for work in header.resume_work %}
-                      <div class="media">
-                        <div class="media-content">
-                          <strong>{{ work.position }}</strong>, {% if work.url %}<a href="{{ work.url }}">{% endif %}{{ work.name }}{% if work.url %}</a>{% endif %}
-                          <div class="is-size-7 has-text-grey">
-                            {{ work.start_date|date("M, Y") }} &mdash;
-                            {% if work.end_date %}
-                              {{ work.end_date|date("M, Y") }}
-                            {% else %}
-                              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.PRESENT'|t }}
-                            {% endif %}
-                          </div>
-                          {% if work.summary or work.highlights %}
-                            <br>
-                            <div class="content">
-                              {% if work.summary %}{{ work.summary }}{% endif %}
-                              {% if work.highlights %}
-                                <ul>
-                                  {% for highlight in work.highlights %}
-                                    <li>{{ highlight.item }}</li>
-                                  {% endfor %}
-                                </ul>
-                              {% endif %}
-                            <div>
-                          {% endif %}
-                        </div>
-                      </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-                </div>
+                {% include 'partials/member/work.html.twig' %}
               {% endif %}
 
               {% if header.resume_volunteer %}
-                <div class="column is-12">
-                  <div class="card">
-                    <div class="card-header">
-                      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.SECTION'|t }}</p>
-                    </div>
-                    <div class="card-content">
-                      {% for volunteer in header.resume_volunteer %}
-                      <div class="media">
-                        <div class="media-content">
-                          <strong>{{ volunteer.position }}</strong>, {% if volunteer.url %}<a href="{{ volunteer.url }}">{% endif %}{{ volunteer.name }}{% if volunteer.url %}</a>{% endif %}
-                          <div class="is-size-7 has-text-grey">
-                            {{ volunteer.start_date|date("M, Y") }} &mdash;
-                            {% if volunteer.end_date %}
-                              {{ volunteer.end_date|date("M, Y") }}
-                            {% else %}
-                              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.PRESENT'|t }}
-                            {% endif %}
-                          </div>
-                          {% if volunteer.summary or volunteer.highlights %}
-                            <br>
-                            <div class="content">
-                              {% if volunteer.summary %}{{ volunteer.summary }}{% endif %}
-                              {% if volunteer.highlights %}
-                                <ul>
-                                  {% for highlight in volunteer.highlights %}
-                                    <li>{{ highlight.item }}</li>
-                                  {% endfor %}
-                                </ul>
-                              {% endif %}
-                            <div>
-                          {% endif %}
-                        </div>
-                      </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-                </div>
+                {% include 'partials/member/volunteer.html.twig' %}
               {% endif %}
 
               {% if header.resume_education %}
-                <div class="column is-12">
-                  <div class="card">
-                    <div class="card-header">
-                      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.EDUCATION.SECTION'|t }}</p>
-                    </div>
-                    <div class="card-content">
-                      {% for education in header.resume_education %}
-                      <div class="media">
-                        <div class="media-content">
-                          <strong>{{ education.area }}, {{ education.study_type }}</strong>, {{ education.institution }}
-                          <div class="is-size-7 has-text-grey">
-                            {{ education.start_date|date("M, Y") }} &mdash;
-                            {% if education.end_date %}
-                              {{ education.end_date|date("M, Y") }}
-                            {% else %}
-                              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.PRESENT'|t }}
-                            {% endif %}
-                          </div>
-                          {% if education.gpa or education.courses %}
-                            <br>
-                            <div class="content">
-                              {% if education.gpa %}{{ education.gpa }}{% endif %}
-                              {% if education.courses %}
-                                <ul>
-                                  {% for course in education.courses %}
-                                    <li>{{ course.item }}</li>
-                                  {% endfor %}
-                                </ul>
-                              {% endif %}
-                            <div>
-                          {% endif %}
-                        </div>
-                      </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-                </div>
+                {% include 'partials/member/education.html.twig' %}
               {% endif %}
 
               {% if header.resume_awards %}
-                <div class="column is-12">
-                  <div class="card">
-                    <div class="card-header">
-                      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.AWARDS.SECTION'|t }}</p>
-                    </div>
-                    <div class="card-content">
-                      {% for award in header.resume_awards %}
-                      <div class="media">
-                        <div class="media-content">
-                          <strong>{{ award.title }}</strong>, {{ award.awarder }}
-                          <div class="is-size-7 has-text-grey">
-                            {{ award.date|date("M, Y") }}
-                          </div>
-                          {% if award.summary %}
-                            <br>
-                            <div class="content">
-                              {{ award.summary }}
-                            <div>
-                          {% endif %}
-                        </div>
-                      </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-                </div>
+                {% include 'partials/member/awards.html.twig' %}
+              {% endif %}
+
+              {% if header.resume_interests %}
+                {% include 'partials/member/interests.html.twig' %}
               {% endif %}
             </div>
           </div>

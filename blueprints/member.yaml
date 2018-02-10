@@ -407,12 +407,15 @@ form:
                       type: text
                       label: RESEARCHER_THEME.PAGES.RESUME.INTERESTS.NAME
                       placeholder: e.g. Game Development
+                      validate:
+                        required: true
                     .keywords:
                       type: selectize
                       label: RESEARCHER_THEME.PAGES.RESUME.INTERESTS.KEYWORDS
                       placeholder: e.g. Unity, Godot
                       validate:
                         type: commalist
+                        required: true
             references:
               type: section
               title: RESEARCHER_THEME.PAGES.RESUME.REFERENCES.SECTION
@@ -428,11 +431,15 @@ form:
                       type: text
                       label: RESEARCHER_THEME.PAGES.RESUME.REFERENCES.NAME
                       placeholder: e.g. Timothy Cook
+                      validate:
+                        required: true
                     .reference:
                       type: textarea
                       label: RESEARCHER_THEME.PAGES.RESUME.REFERENCES.REFERENCE
                       style: vertical
                       placeholder: e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing.
+                      validate:
+                        required: true
             projects:
               type: section
               title: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.SECTION

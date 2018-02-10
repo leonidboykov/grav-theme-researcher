@@ -1,0 +1,25 @@
+<div class="column is-12">
+  <div class="card">
+    <div class="card-header">
+      <p class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.AWARDS.SECTION'|t }}</p>
+    </div>
+    <div class="card-content">
+      {% for award in header.resume_awards %}
+      <div class="media">
+        <div class="media-content">
+          <strong>{{ award.title }}</strong>, {{ award.awarder }}
+          <div class="is-size-7 has-text-grey">
+            {{ award.date|date("M, Y") }}
+          </div>
+          {% if award.summary %}
+            <br>
+            <div class="content">
+              {{ award.summary }}
+            <div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

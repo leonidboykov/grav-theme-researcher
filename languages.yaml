@@ -2,10 +2,8 @@ en:
   RESEARCHER_THEME:
     SETTINGS:
       LABEL: Settings
-      NAVBAR:
-        COLOR: Navigation Color
-      FOOTER:
-        COLOR: Footer Color
+      COLOR:
+        PRIMARY: Primary Color
     PAGES:
       SUB_TITLE: Subtitle
       SECTION:
