@@ -332,6 +332,12 @@ form:
                       type: text
                       label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.NAME
                       placeholder: e.g. World Wide Web
+                    .co_authors:
+                      type: selectize
+                      label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.CO_AUTHORS
+                      placeholder: e.g. Jane Doe
+                      validate:
+                        type: commalist
                     .publisher:
                       type: text
                       label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.PUBLISHER
@@ -342,12 +348,25 @@ form:
                       type: text
                       label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.URL
                       placeholder: e.g. http://www.computer.org.example.com/csdl/mags/co/1996/10/rx069-abs.html
+                    .file:
+                      type: filepicker
+                      style: horizontal
+                      label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.FILE
+                      folder: '@self'
+                      preview_images: false
+                      accept:
+                        - .pdf
                     .summary:
                       type: textarea
                       label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.SUMMARY
                       style: vertical
                       placeholder: Short summary of publication. e.g. Discussion of the World Wide Web, HTTP, HTML.
-                    # TODO: Add upload for PDFs
+                    .keywords:
+                      type: selectize
+                      label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.KEYWORDS
+                      placeholder: e.g. Tags
+                      validate:
+                        type: commalist
             skills:
               type: section
               title: RESEARCHER_THEME.PAGES.RESUME.SKILLS.SECTION

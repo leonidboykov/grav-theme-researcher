@@ -23,12 +23,14 @@ form:
         initial.date:
           type: datetime
           label: SETTINGS.YEAR_OF_FOUNDATION
+          size: medium
           help: RESEARCHER_THEME.SETTINGS.YEAR_OF_FOUNDATION.HELP
           default: 01-01-2016 00:00
           validate.required: true
         primary_color:
           type: select
           label: RESEARCHER_THEME.SETTINGS.COLOR.PRIMARY
+          size: small
           classes: fancy
           default: primary
           options:
@@ -41,3 +43,19 @@ form:
             warning: warning
             danger: danger
             dark: dark
+        publications_limit:
+          type: text
+          label: RESEARCHER_THEME.SETTINGS.PUBLICATIONS.LIMIT
+          size: small
+          default: 10
+          validate:
+            type: number
+            min: 1
+        projects_limit:
+          type: text
+          label: RESEARCHER_THEME.SETTINGS.PROJECTS.LIMIT
+          size: small
+          default: 10
+          validate:
+            type: number
+            min: 1

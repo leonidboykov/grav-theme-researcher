@@ -4,6 +4,10 @@ en:
       LABEL: Settings
       COLOR:
         PRIMARY: Primary Color
+      PUBLICATIONS:
+        LIMIT: Publications Limit
+      PROJECTS:
+        LIMIT: Projects Limit
     PAGES:
       SUB_TITLE: Subtitle
       THUMBNAIL: Thumbnail
@@ -75,10 +79,13 @@ en:
         PUBLICATIONS:
           SECTION: Publications
           NAME: Name
+          CO_AUTHORS: Co Authors
+          KEYWORDS: Keywords
           PUBLISHER: Publisher
           RELEASE_DATE: Release Date
           URL: URL
           SUMMARY: Summary
+          FILE: File
         SKILLS:
           SECTION: Skills
           NAME: Name
@@ -113,4 +120,7 @@ en:
         EMAIL: Email
         HOMEPAGE: Homepage
         PRESENT: present
+        DOWNLOAD: download
+        WITH: with
+        SHOWING_LATEST: showing %d latest %s
       LINK: Link

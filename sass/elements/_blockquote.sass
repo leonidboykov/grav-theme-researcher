@@ -1,0 +1,9 @@
+.content
+  blockquote
+    @each $name, $pair in $colors
+      $color: nth($pair, 1)
+      $color-invert: nth($pair, 2)
+      $color-lightning: max((100% - lightness($color)) - 2%, 0%)
+      &.is-#{$name}
+        background-color: lighten($color, $color-lightning)
+        border-left-color: $color

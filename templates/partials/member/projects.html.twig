@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="card-content">
-      {% for project in header.resume_projects|sort_by_key('start_date')|reverse %}
+      {% for project in header.resume_projects|sort_by_key('start_date')|reverse|slice(0, theme_config.projects_limit) %}
       <div class="media">
         <div class="media-content">
           <strong>{{ project.name }}, {{ project.roles|join(', ') }}</strong>
@@ -50,6 +50,9 @@
         </div>
       </div>
       {% endfor %}
+      {% if header.resume_projects|length > theme_config.projects_limit %}
+        <span class="is-size-7 has-text-grey">{{ 'RESEARCHER_THEME.FRONTEND.MEMBER.SHOWING_LATEST'|t(theme_config.projects_limit, 'RESEARCHER_THEME.PAGES.RESUME.PROJECTS.SECTION'|t|lower) }}</span>
+      {% endif %}
     </div>
   </div>
 </div>

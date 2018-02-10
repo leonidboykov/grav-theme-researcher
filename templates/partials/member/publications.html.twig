@@ -1,0 +1,56 @@
+<div class="column is-12">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-header-title">{{ 'RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.SECTION'|t }} ({{ header.resume_publications|length }})</div>
+      <div class="card-header-icon">
+        <span class="icon">
+          <i class="fas fa-file-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+    <div class="card-content">
+      {% for publication in header.resume_publications|sort_by_key('release_date')|reverse|slice(0, theme_config.publications_limit) %}
+      <div class="media">
+        <div class="media-content">
+          <strong>{{ publication.name }}</strong>
+          {% if publication.url %}
+            <a href="{{ publication.url }}">
+              <span class="icon is-small">
+                <i class="fas fa-external-link-square-alt" aria-hidden="true"></i>
+              </span>
+            </a>
+          {% endif %}
+          <div class="is-size-7 has-text-grey">
+            {{ publication.release_date|date("jS M, Y") }} | {{ publication.publisher }}{% if publication.co_authors %} | {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.WITH'|t }} {{ publication.co_authors|join(', ') }}{% endif %}
+          </div>
+          {% if publication.summary %}
+            <div class="content">
+              {{ publication.summary }}
+            </div>
+          {% endif %}
+          {% if publication.keywords %}
+            <div class="tags">
+              {% for keyword in publication.keywords %}
+                <span class="tag is-{{ theme_config.primary_color }}"><i class="fas fa-tags"></i>&nbsp;{{ keyword }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        <div class="media-right has-text-centered">
+          {% if publication.file %}
+            <a href="{{ publication.url }}">
+              <span class="icon is-large">
+                <i class="fas fa-3x fa-download" aria-hidden="true"></i>
+              </span>
+            </a>
+            <p class="is-size-7">{{ 'RESEARCHER_THEME.FRONTEND.MEMBER.DOWNLOAD'|t }}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+      {% if header.resume_publications|length > theme_config.publications_limit %}
+        <span class="is-size-7 has-text-grey">{{ 'RESEARCHER_THEME.FRONTEND.MEMBER.SHOWING_LATEST'|t(theme_config.publications_limit, 'RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.SECTION'|t|lower) }}</span>
+      {% endif %}
+    </div>
+  </div>
+</div>
