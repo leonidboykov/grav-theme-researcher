@@ -22,9 +22,11 @@
     {% endblock %}
     {{ assets.css() }}
     {% block javascripts %}
-      {% do assets.addJs('https://use.fontawesome.com/releases/v5.0.0/js/all.js', { 'priority': 99, 'loading': 'defer', 'group': 'bottom' }) %}
-      {% do assets.addJs('theme://js/main.js', { 'priority': 95, 'loading': 'async', 'group': 'bottom' }) %}
+      {% do assets.addJs('jquery', 100) %}
+      {% do assets.addJs('https://use.fontawesome.com/releases/v5.0.0/js/all.js', { 'priority': 99, 'loading': 'defer' }) %}
+      {% do assets.addJs('theme://js/main.js', { 'priority': 95, 'loading': 'defer', 'group': 'bottom' }) %}
     {% endblock %}
+    {{ assets.js() }}
   </head>
   <body>
     {% block header %}

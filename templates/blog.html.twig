@@ -5,7 +5,8 @@
     <div class="container">
       <div class="columns">
         <div class="column is-8">
-          {% for post in page.collection %}
+          {% set collection = search_results ?: page.collection() %}
+          {% for post in collection %}
           {% set author = page.find(post.header.author) %}
             <div class="columns">
               <div class="column is-12">
