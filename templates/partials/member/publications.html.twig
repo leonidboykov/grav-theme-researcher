@@ -38,7 +38,7 @@
         </div>
         <div class="media-right has-text-centered">
           {% if publication.file %}
-            <a href="{{ publication.url }}">
+            <a href="{{ page.media[publication.file].url }}">
               <span class="icon is-large">
                 <i class="fas fa-3x fa-download" aria-hidden="true"></i>
               </span>
