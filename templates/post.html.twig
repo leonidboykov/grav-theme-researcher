@@ -6,27 +6,19 @@
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container">
-        <div class="columns">
-          <div class="column is-8">
-            <div class="card">
-              <div class="card-content">
-                <h1 class="title is-2">{{ header.title }}</h1>
-                <h3 class="subtitle is-6 has-text-grey">by <a href="{{ author.url }}">{{ author.title }}</a> on {{ page.date|date("jS M Y") }}</h3>
-                <hr>
-                <div class="content">{{ content }}</div>
-                <hr>
-                <div class="level">
-                  <div class="level-right">
-                    <div class="level-item">
-                    <!-- TODO: Setup Share buttons -->
-                    <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59284f01bd9f2b41"></script>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div class="columns is-centered">
+          <div class="column is-9-tablet is-8-desktop">
+            <div class="has-text-centered">
+              <h1 class="title is-2">{{ header.title }}</h1>
+              <h3 class="subtitle is-6 has-text-grey">by <a href="{{ author.url }}">{{ author.title }}</a> on {{ page.date|date("jS M Y") }}</h3>
             </div>
+            <hr>
+            <div class="content has-text-justified">{{ content }}</div>
+            <hr>
+            {% if config.plugins.jscomments.enabled %}
+              {{ jscomments()|raw }}
+            {% endif %}
           </div>
-          <aside class="column"></aside>
         </div>
       </div>
     </div>
