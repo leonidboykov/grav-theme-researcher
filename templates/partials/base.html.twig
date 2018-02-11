@@ -15,9 +15,6 @@
 
     <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
 
-    <!-- TODO: fix FA include -->
-    <script src="https://use.fontawesome.com/09b775947d.js"></script>
-
     {% block stylesheets %}
       <!-- TODO: Make fonts customisable -->
       {% do assets.addCss('https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic', 100) %}
