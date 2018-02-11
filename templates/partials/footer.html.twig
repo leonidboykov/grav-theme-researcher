@@ -7,8 +7,7 @@
         </div>
         <div class="level-item">
           <div>
-            <!-- TODO: replace SPACE with Site title -->
-            <p>&copy; {{ theme_config.initial.date|date("Y") }} &mdash; {{ "now"|date("Y") }} <a href="{{ base_url }}">{{ site.title|e('html') }}</a></p>
+            <p>&copy; {% if theme_config.initial_date %}{{ theme_config.initial_date|date("Y") }} &mdash; {% endif %}{{ "now"|date("Y") }} <a href="{{ base_url }}">{{ site.title|e('html') }}</a></p>
             <p class="is-size-7">
               Developed by <a href="https://leonidboykov.com">Leonid Boykov</a>. Powered by <a href="https://getgrav.com">Grav</a> and <a href="https://github.com/leonidboykov/grav-theme-researcher">Researcher</a>
             </p>

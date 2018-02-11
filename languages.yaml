@@ -2,6 +2,7 @@ en:
   RESEARCHER_THEME:
     SETTINGS:
       LABEL: Settings
+      YEAR_OF_FOUNDATION: Foundation year
       COLOR:
         PRIMARY: Primary Color
       NAVBAR_FIXED: Fixed Navbar
