@@ -1,34 +1,36 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-  <section class="hero is-{{ header.section_height }} is-{{ header.section_color }}">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-8">
-            {% for post in page.collection %}
-            {% set author = page.find(post.header.author) %}
-              <div class="card">
-                <div class="card-content">
-                  <div class="media">
-                    {% if post.header.thumbnail %}
-                      <div class="media-left">
-                        <figure class="image">{{ post.media[post.header.thumbnail].resize(200,200).html }}</figure>
-                      </div>
-                    {% endif %}
-                    <div class="media-content">
-                      <h3 class="title is-5"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-                      <h3 class="subtitle is-7 has-text-grey">by <a href="{{ author.url }}">{{ author.title }}</a> on {{ page.date|date("jS M Y") }}</h3>
-                      <hr>
-                      <div class="content">{{ post.summary }}</div>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8">
+          {% for post in page.collection %}
+          {% set author = page.find(post.header.author) %}
+            <div class="card">
+              <div class="card-content">
+                <div class="media">
+                  {% if post.header.thumbnail %}
+                    <div class="media-left">
+                      <figure class="image">{{ post.media[post.header.thumbnail].resize(200,200).html }}</figure>
                     </div>
+                  {% endif %}
+                  <div class="media-content">
+                    <h3 class="title is-5"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    <h3 class="subtitle is-7 has-text-grey">by <a href="{{ author.url }}">{{ author.title }}</a> on {{ page.date|date("jS M Y") }}</h3>
+                    <hr>
+                    <div class="content">{{ post.summary }}</div>
                   </div>
                 </div>
               </div>
-            {% endfor %}
-          </div>
-          <aside class="column"></aside>
+            </div>
+          {% endfor %}
         </div>
+        <aside class="column">
+          {% if config.plugins.simplesearch.enabled %}
+            {% include 'partials/widgets/search.html.twig' %}
+          {% endif %}
+        </aside>
       </div>
     </div>
   </section>

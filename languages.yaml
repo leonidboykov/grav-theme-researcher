@@ -4,6 +4,7 @@ en:
       LABEL: Settings
       COLOR:
         PRIMARY: Primary Color
+      NAVBAR_FIXED: Fixed Navbar
       PUBLICATIONS:
         LIMIT: Publications Limit
       PROJECTS:
@@ -124,3 +125,5 @@ en:
         WITH: with
         SHOWING_LATEST: showing %d latest %s
       LINK: Link
+      NEXT: Next
+      PREVIOUS: Previous

@@ -1,7 +1,8 @@
+{% spaceless %}
 <!DOCTYPE html>
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
-<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}"{% if theme_config.navbar_fixed %} class="has-navbar-fixed-top"{% endif %}>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -41,3 +42,4 @@
     {{ assets.js('bottom') }}
   </body>
 </html>
+{% endspaceless %}

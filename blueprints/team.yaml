@@ -20,13 +20,6 @@ form:
               unset@: true
             header.media_order:
               unset@: true
-        section:
-          type: tab
-          title: Section
-          ordering@: content
-          import@:
-            type: partials/section
-            context: blueprints://
         advanced:
           type: tab
           fields:

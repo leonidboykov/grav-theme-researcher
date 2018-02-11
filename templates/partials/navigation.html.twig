@@ -1,5 +1,5 @@
-<div class="container">
-  <nav class="navbar">
+<nav class="navbar is-{{ theme_config.primary_color }}{% if theme_config.navbar_fixed %} is-fixed-top{% endif %}">
+  <div class="container">
     <div class="navbar-brand">
       <!-- TODO: Add Branding -->
       <!-- TODO: Add language switcher -->
@@ -17,7 +17,21 @@
         {% set current_page = (page.active or page.activeChild) ? "is-active" : "" %}
           <a class="navbar-item {{ current_page }}" href="{{ page.url }}">{{ page.menu }}</a>
         {% endfor %}
+        {% if config.plugins.langswitcher.enabled %}
+          <div class="navbar-item has-dropdown is-hoverable">
+            {% set langobj = grav['language'] %}
+            <a class="navbar-link" href="#">{{ native_name(langswitcher.current) }}</a>
+            <div class="navbar-dropdown ">
+              {% for key in langswitcher.languages %}
+                {% if key != langswitcher.current %}
+                  {% set lang_url = base_url_simple ~ langobj.getLanguageURLPrefix(key)~langswitcher.page_route~page.urlExtension ?: '/' %}
+                  <a class="navbar-item" href="{{ lang_url }}">{{ native_name(key) }}</a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
       </div>
     </div>
-  </nav>
-</div>
+  </div>
+</nav>

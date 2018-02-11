@@ -43,6 +43,15 @@ form:
             warning: warning
             danger: danger
             dark: dark
+        navbar_fixed:
+          type: toggle
+          label: RESEARCHER_THEME.SETTINGS.NAVBAR_FIXED
+          default: 0
+          options:
+            1: PLUGIN_ADMIN.YES
+            0: PLUGIN_ADMIN.NO
+          validate:
+            type: bool
         publications_limit:
           type: text
           label: RESEARCHER_THEME.SETTINGS.PUBLICATIONS.LIMIT

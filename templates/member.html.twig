@@ -1,60 +1,58 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-  <section class="hero is-{{ header.section_height }} is-{{ header.section_color }}">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-            <div class="columns is-multiline">
-              {% include 'partials/member/card.html.twig' %}
-              {% if header.resume_languages %}
-                {% include 'partials/member/languages.html.twig' %}
-              {% endif%}
-            </div>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+          <div class="columns is-multiline">
+            {% include 'partials/member/card.html.twig' %}
+            {% if header.resume_languages %}
+              {% include 'partials/member/languages.html.twig' %}
+            {% endif%}
           </div>
-          <div class="column">
-            <div class="columns is-multiline">
-              {% if header.resume_basics_summary %}
-                {% include 'partials/member/basics.html.twig' %}
-              {% endif %}
+        </div>
+        <div class="column">
+          <div class="columns is-multiline">
+            {% if header.resume_basics_summary %}
+              {% include 'partials/member/basics.html.twig' %}
+            {% endif %}
 
-              {% if header.resume_work %}
-                {% include 'partials/member/work.html.twig' %}
-              {% endif %}
+            {% if header.resume_work %}
+              {% include 'partials/member/work.html.twig' %}
+            {% endif %}
 
-              {% if header.resume_volunteer %}
-                {% include 'partials/member/volunteer.html.twig' %}
-              {% endif %}
+            {% if header.resume_volunteer %}
+              {% include 'partials/member/volunteer.html.twig' %}
+            {% endif %}
 
-              {% if header.resume_education %}
-                {% include 'partials/member/education.html.twig' %}
-              {% endif %}
+            {% if header.resume_education %}
+              {% include 'partials/member/education.html.twig' %}
+            {% endif %}
 
-              {% if header.resume_awards %}
-                {% include 'partials/member/awards.html.twig' %}
-              {% endif %}
+            {% if header.resume_awards %}
+              {% include 'partials/member/awards.html.twig' %}
+            {% endif %}
 
-              {% if header.resume_interests %}
-                {% include 'partials/member/interests.html.twig' %}
-              {% endif %}
+            {% if header.resume_interests %}
+              {% include 'partials/member/interests.html.twig' %}
+            {% endif %}
 
-              {% if header.resume_projects %}
-                {% include 'partials/member/projects.html.twig' %}
-              {% endif %}
+            {% if header.resume_projects %}
+              {% include 'partials/member/projects.html.twig' %}
+            {% endif %}
 
-              {% if header.resume_references %}
-                {% include 'partials/member/references.html.twig' %}
-              {% endif %}
+            {% if header.resume_references %}
+              {% include 'partials/member/references.html.twig' %}
+            {% endif %}
 
-              {% if header.resume_skills %}
-                {% include 'partials/member/skills.html.twig' %}
-              {% endif %}
+            {% if header.resume_skills %}
+              {% include 'partials/member/skills.html.twig' %}
+            {% endif %}
 
-              {% if header.resume_publications %}
-                {% include 'partials/member/publications.html.twig' %}
-              {% endif %}
-            </div>
+            {% if header.resume_publications %}
+              {% include 'partials/member/publications.html.twig' %}
+            {% endif %}
           </div>
         </div>
       </div>

@@ -1,28 +1,26 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-  <section class="hero is-{{ header.section_height }} is-{{ header.section_color }}">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-multiline">
-          {% for member in page.collection %}
-            <div class="column is-one-third-tablet is-one-quarter-desktop">
-              <a href="{{ member.url }}">
-                <div class="card is-fullheight">
-                  <div class="card-image">
-                    <figure class="image is-1by1">
-                      {{ member.media[member.header.resume_basics_image].html }}
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <h3 class="title is-4">{{ member.header.resume_basics_name }}</h3>
-                    <p class="subtitle is-6 has-text-grey">{{ member.header.resume_basics_label }}</p>
-                  </div>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        {% for member in page.collection %}
+          <div class="column is-one-third-tablet is-one-quarter-desktop">
+            <a href="{{ member.url }}">
+              <div class="card is-fullheight">
+                <div class="card-image">
+                  <figure class="image is-1by1">
+                    {{ member.media[member.header.resume_basics_image].html }}
+                  </figure>
                 </div>
-              </a>
-            </div>
-          {% endfor %}
-        </div>
+                <div class="card-content">
+                  <h3 class="title is-4">{{ member.header.resume_basics_name }}</h3>
+                  <p class="subtitle is-6 has-text-grey">{{ member.header.resume_basics_label }}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </section>

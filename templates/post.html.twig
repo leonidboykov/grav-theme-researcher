@@ -3,22 +3,22 @@
 {% set author = page.find(page.header.author) %}
 
 {% block content %}
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-9-tablet is-8-desktop">
-            <div class="has-text-centered">
-              <h1 class="title is-2">{{ header.title }}</h1>
-              <h3 class="subtitle is-6 has-text-grey">by <a href="{{ author.url }}">{{ author.title }}</a> on {{ page.date|date("jS M Y") }}</h3>
-            </div>
-            <hr>
-            <div class="content has-text-justified">{{ content }}</div>
-            <hr>
-            {% if config.plugins.jscomments.enabled %}
-              {{ jscomments()|raw }}
-            {% endif %}
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-9-tablet is-8-desktop">
+          <div class="has-text-centered">
+            <h1 class="title is-2">{{ header.title }}</h1>
+            <h3 class="subtitle is-6 has-text-grey">by <a href="{{ author.url }}">{{ author.title }}</a> on {{ page.date|date("jS M Y") }}</h3>
           </div>
+          <hr>
+          <div class="content has-text-justified">{{ content }}</div>
+          <hr>
+          {% include 'partials/post-navigation.html.twig' %}
+          <hr>
+          {% if config.plugins.jscomments.enabled %}
+            {{ jscomments()|raw }}
+          {% endif %}
         </div>
       </div>
     </div>
