@@ -1,0 +1,22 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block header %}
+  <header class="hero is-{{ header.section_height }} is-{{ header.section_color }} {% if header.section_is_bold %}is-bold{% endif %}">
+  <div class="hero-head">
+    {% include 'partials/navigation.html.twig' %}
+  </div>
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 is-spaced">{{ site.title|e('html') }}</h1>
+      <h2 class="subtitle is-4">{{ header.sub_title }}</h2>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+  {{ page.content }}
+  {% for module in page.collection() %}
+    {{ module.content }}
+  {% endfor %}
+{% endblock %}

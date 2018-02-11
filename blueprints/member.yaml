@@ -1,70 +1,523 @@
 title: Member
-'@extends':
-    type: default
-    context: blueprints://pages
+extends@: default
 
 form:
   fields:
     tabs:
+      active: 1
       fields:
         content:
-          type: tab
-          title: Content
+          title: RESEARCHER_THEME.PAGES.RESUME.TAB
           fields:
             header.title:
-              label: PEOPLE.MEMBER.FULL_NAME.LABEL
-              placeholder: PEOPLE.MEMBER.FULL_NAME.PLACEHOLDER
-            header.title_short:
-              ordering@: header.title
               type: text
-              label: PEOPLE.MEMBER.SHORT_NAME.LABEL
-              placeholder: PEOPLE.MEMBER.SHORT_NAME.PLACEHOLDER
-            header.email:
-              ordering@: header.title_short
-              type: text
-              label: PEOPLE.MEMBER.EMAIL.LABEL
-              placeholder: PEOPLE.MEMBER.EMAIL.PLACEHOLDER
-              help: PEOPLE.MEMBER.EMAIL.HELP
-            header.job:
-              ordering@: header.email
-              type: text
-              label: PEOPLE.MEMBER.JOB.LABEL
-              placeholder: PEOPLE.MEMBER.JOB.PLACEHOLDER
-            header.short_description:
-              ordering@: header.job
-              type: text
-              label: PEOPLE.MEMBER.SHORT_DESCRIPTION.LABEL
-              placeholder: PEOPLE.MEMBER.SHORT_DESCRIPTION.PLACEHOLDER
+              autofocus: true
             content:
-              ordering@: header.short_description
-              label: PEOPLE.MEMBER.FULL_DESCRIPTION.LABEL
-            header.photo:
-              ordering@: content
-              type: filepicker
-              label: PEOPLE.MEMBER.AVATAR.LABEL
-              preview_images: true
-            uploads:
-              ordering@: header.photo
-              label: PEOPLE.MEMBER.PHOTOS.LABEL
-            header.social:
-              name: social
-              type: list
-              label: Social
+              unset@: true
+            basics:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.BASICS.SECTION
+              underline: true
               fields:
-                .icon:
-                  type: text
-                  label: ICON
-                  placeholder: FontAwesome fa-<icon> (without `fa-`)
-                .url:
-                  type: text
-                  label: URL
-                  placeholder: http(s)://example.com
-            header.show_on_index:
-              type: toggle
-              label: PEOPLE.MEMBER.SHOW_ON_INDEX.LABEL
-              default: 1
-              options:
-                  1: PLUGIN_ADMIN.YES
-                  0: PLUGIN_ADMIN.NO
-              validate:
-                  type: bool
+                columns:
+                  type: columns
+                  fields:
+                    column1:
+                      type: column
+                      fields:
+                        header.resume_basics_name:
+                          type: name
+                          label: RESEARCHER_THEME.PAGES.RESUME.BASICS.NAME
+                          placeholder: e.g. John Doe
+                          validate:
+                            required: true
+                        header.resume_basics_email:
+                          type: email
+                          label: RESEARCHER_THEME.PAGES.RESUME.BASICS.EMAIL
+                          placeholder: e.g. jdoe@example.com
+                          validate:
+                            required: true
+                            type: email
+                        header.resume_basics_image:
+                          type: filepicker
+                          style: horizontal
+                          label: RESEARCHER_THEME.PAGES.RESUME.BASICS.IMAGE
+                          folder: '@self'
+                          preview_images: true
+                          accept:
+                            - .png
+                            - .jpg
+                    column2:
+                      type: column
+                      fields:
+                        header.resume_basics_label:
+                          type: text
+                          label: RESEARCHER_THEME.PAGES.RESUME.BASICS.LABEL
+                          placeholder: e.g. Web Developer
+                          validate:
+                            required: true
+                        header.resume_basics_url:
+                          type: text
+                          label: RESEARCHER_THEME.PAGES.RESUME.BASICS.URL
+                          placeholder: https://example.com/
+                        header.resume_basics_phone:
+                          type: text
+                          label: RESEARCHER_THEME.PAGES.RESUME.BASICS.PHONE
+                          placeholder: e.g. (555) 555-5555
+                header.resume_basics_summary:
+                  type: editor
+                  label: RESEARCHER_THEME.PAGES.RESUME.BASICS.SUMMARY
+                  style: vertical
+                  placeholder: Write a short 2-3 sentence biography about yourself
+            location:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.LOCATION.SECTION
+              underline: true
+              fields:
+                header.resume_location_address:
+                  type: textarea
+                  label: RESEARCHER_THEME.PAGES.RESUME.LOCATION.ADDRESS
+                  style: vertical
+                columns:
+                  type: columns
+                  fields:
+                    column1:
+                      type: column
+                      fields:
+                        header.resume_location_postal_code:
+                          type: text
+                          label: RESEARCHER_THEME.PAGES.RESUME.LOCATION.POSTAL_CODE
+                        header.resume_location_country_code:
+                          type: text
+                          label: RESEARCHER_THEME.PAGES.RESUME.LOCATION.COUNTRY_CODE
+                          placeholder: e.g. US, AU, IN
+                    column2:
+                      type: column
+                      fields:
+                        header.resume_location_city:
+                          type: text
+                          label: RESEARCHER_THEME.PAGES.RESUME.LOCATION.CITY
+                        header.resume_location_region:
+                          type: text
+                          label: RESEARCHER_THEME.PAGES.RESUME.LOCATION.REGION
+
+            profiles:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.PROFILES.SECTION
+              underline: true
+              fields:
+                header.resume_profiles:
+                  name: profiles
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .network:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROFILES.NETWORK
+                      placeholder: e.g. Facebook or Twitter
+                      validate:
+                        required: true
+                    .username:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROFILES.USERNAME
+                      placeholder: e.g. jdoe
+                      validate:
+                        required: true
+                    .url:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROFILES.URL
+                      placeholder: e.g. https://twitter.example.com/jdoe
+                      validate:
+                        required: true
+            work:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.WORK.SECTION
+              underline: true
+              fields:
+                header.resume_work:
+                  name: work
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .name:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.WORK.NAME
+                      placeholder: e.g. Facebook
+                      validate:
+                        required: true
+                    .location:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.WORK.LOCATION
+                      placeholder: e.g. Menlo Park, CA
+                    .description:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.WORK.DESCRIPTION
+                      placeholder: e.g. Social Media Company
+                    .position:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.WORK.POSITION
+                      placeholder: e.g. Software Engineer
+                      validate:
+                        required: true
+                    .url:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.WORK.URL
+                      placeholder: e.g. http://facebook.example.com
+                    .start_date:
+                      type: date
+                      label: RESEARCHER_THEME.PAGES.RESUME.WORK.START_DATE
+                      validate:
+                        required: true
+                    .end_date:
+                      type: date
+                      label: RESEARCHER_THEME.PAGES.RESUME.WORK.END_DATE
+                    .summary:
+                      type: textarea
+                      label: RESEARCHER_THEME.PAGES.RESUME.WORK.SUMMARY
+                      style: vertical
+                    .highlights:
+                      name: highlights
+                      type: list
+                      label: RESEARCHER_THEME.PAGES.RESUME.WORK.HIGHLIGHTS
+                      style: vertical
+                      fields:
+                        .item:
+                          type: text
+                          style: vertical
+                          placeholder: e.g. Increased profits by 20% from 2011-2012 through viral advertising
+            volunteer:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.SECTION
+              underline: true
+              fields:
+                header.resume_volunteer:
+                  name: volunteer
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .name:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.NAME
+                      placeholder: e.g. Facebook
+                      validate:
+                        required: true
+                    .position:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.POSITION
+                      placeholder: e.g. Software Engineer
+                      validate:
+                        required: true
+                    .url:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.URL
+                      placeholder: e.g. http://facebook.example.com
+                    .start_date:
+                      type: date
+                      label: RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.START_DATE
+                    .end_date:
+                      type: date
+                      label: RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.END_DATE
+                    .summary:
+                      type: textarea
+                      label: RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.SUMMARY
+                      style: vertical
+                    .highlights:
+                      name: highlights
+                      type: list
+                      label: RESEARCHER_THEME.PAGES.RESUME.VOLUNTEER.HIGHLIGHTS
+                      style: vertical
+                      fields:
+                        .item:
+                          type: text
+                          style: vertical
+                          placeholder: e.g. Increased profits by 20% from 2011-2012 through viral advertising
+            education:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.EDUCATION.SECTION
+              underline: true
+              fields:
+                header.resume_education:
+                  name: education
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .institution:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.EDUCATION.INSTITUTION
+                      placeholder: e.g. Massachusetts Institute of Technology
+                      validate:
+                        required: true
+                    .area:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.EDUCATION.AREA
+                      placeholder: e.g. Computer Science
+                      validate:
+                        required: true
+                    .study_type:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.EDUCATION.STUDY_TYPE
+                      placeholder: e.g. Bachelor
+                      validate:
+                        required: true
+                    .start_date:
+                      type: date
+                      label: RESEARCHER_THEME.PAGES.RESUME.EDUCATION.START_DATE
+                      validate:
+                        required: true
+                    .end_date:
+                      type: date
+                      label: RESEARCHER_THEME.PAGES.RESUME.EDUCATION.END_DATE
+                    .gpa:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.EDUCATION.GPA
+                      placeholder: grade point average, e.g. 3.67/4.0
+                    .courses:
+                      name: courses
+                      type: list
+                      label: RESEARCHER_THEME.PAGES.RESUME.EDUCATION.COURSES
+                      style: vertical
+                      fields:
+                        .item:
+                          type: text
+                          style: vertical
+                          placeholder: e.g. H1302 - Introduction to American history
+            awards:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.AWARDS.SECTION
+              underline: true
+              fields:
+                header.resume_awards:
+                  name: awards
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .title:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.AWARDS.TITLE
+                      placeholder: e.g. One of the 100 greatest minds of the century
+                      validate:
+                        required: true
+                    .date:
+                      type: date
+                      label: RESEARCHER_THEME.PAGES.RESUME.AWARDS.DATE
+                      validate:
+                        required: true
+                    .awarder:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.AWARDS.AWARDER
+                      placeholder: e.g. Time Magazine
+                      validate:
+                        required: true
+                    .summary:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.AWARDS.SUMMARY
+                      placeholder: e.g. Received for my work with Quantum Physics
+            publications:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.SECTION
+              underline: true
+              fields:
+                header.resume_publications:
+                  name: publications
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .name:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.NAME
+                      placeholder: e.g. World Wide Web
+                    .co_authors:
+                      type: selectize
+                      label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.CO_AUTHORS
+                      placeholder: e.g. Jane Doe
+                      validate:
+                        type: commalist
+                    .publisher:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.PUBLISHER
+                    .release_date:
+                      type: date
+                      label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.RELEASE_DATE
+                    .url:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.URL
+                      placeholder: e.g. http://www.computer.org.example.com/csdl/mags/co/1996/10/rx069-abs.html
+                    .file:
+                      type: filepicker
+                      style: horizontal
+                      label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.FILE
+                      folder: '@self'
+                      preview_images: false
+                      accept:
+                        - .pdf
+                    .summary:
+                      type: textarea
+                      label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.SUMMARY
+                      style: vertical
+                      placeholder: Short summary of publication. e.g. Discussion of the World Wide Web, HTTP, HTML.
+                    .keywords:
+                      type: selectize
+                      label: RESEARCHER_THEME.PAGES.RESUME.PUBLICATIONS.KEYWORDS
+                      placeholder: e.g. Tags
+                      validate:
+                        type: commalist
+            skills:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.SKILLS.SECTION
+              underline: true
+              fields:
+                header.resume_skills:
+                  name: skills
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .name:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.SKILLS.NAME
+                      placeholder: e.g. Web Development
+                    .level:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.SKILLS.LEVEL
+                      placeholder: e.g. Master
+                    .keywords:
+                      type: selectize
+                      label: RESEARCHER_THEME.PAGES.RESUME.SKILLS.KEYWORDS
+                      placeholder: e.g. HTML
+                      validate:
+                        type: commalist
+            languages:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.LANGUAGES.SECTION
+              underline: true
+              fields:
+                header.resume_languages:
+                  name: languages
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .language:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.LANGUAGES.LANGUAGE
+                      placeholder: e.g. English, Spanish
+                    .fluency:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.LANGUAGES.FLUENCY
+                      placeholder: e.g. Fluent, Beginner
+            interests:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.INTERESTS.SECTION
+              underline: true
+              fields:
+                header.resume_interests:
+                  name: interests
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .name:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.INTERESTS.NAME
+                      placeholder: e.g. Game Development
+                      validate:
+                        required: true
+                    .keywords:
+                      type: selectize
+                      label: RESEARCHER_THEME.PAGES.RESUME.INTERESTS.KEYWORDS
+                      placeholder: e.g. Unity, Godot
+                      validate:
+                        type: commalist
+                        required: true
+            references:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.REFERENCES.SECTION
+              underline: true
+              fields:
+                header.resume_references:
+                  name: references
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .name:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.REFERENCES.NAME
+                      placeholder: e.g. Timothy Cook
+                      validate:
+                        required: true
+                    .reference:
+                      type: textarea
+                      label: RESEARCHER_THEME.PAGES.RESUME.REFERENCES.REFERENCE
+                      style: vertical
+                      placeholder: e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing.
+                      validate:
+                        required: true
+            projects:
+              type: section
+              title: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.SECTION
+              underline: true
+              fields:
+                header.resume_projects:
+                  name: projects
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .name:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.NAME
+                      placeholder: e.g. The World Wide Web
+                      validate:
+                        required: true
+                    .description:
+                      type: textarea
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.DESCRIPTION
+                      style: vertical
+                      placeholder: Short summary of project. e.g. Collated works of 2017.
+                    .highlights:
+                      name: highlights
+                      type: list
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.HIGHLIGHTS
+                      style: vertical
+                      fields:
+                        .item:
+                          type: text
+                          style: vertical
+                          placeholder: e.g. Directs you close but not quite there
+                    .keywords:
+                      type: selectize
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.KEYWORDS
+                      placeholder: e.g. AngularJS
+                      validate:
+                        type: commalist
+                    .start_date:
+                      type: date
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.START_DATE
+                    .end_date:
+                      type: date
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.END_DATE
+                    .url:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.URL
+                      placeholder: e.g. http://www.computer.org/csdl/mags/co/1996/10/rx069-abs.html
+                    .roles:
+                      type: selectize
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.ROLES
+                      placeholder: e.g. Team Lead, Speaker, Writer
+                      validate:
+                        type: commalist
+                    .entity:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.ENTITY
+                      placeholder: Specify the relevant company/entity affiliations e.g. 'greenpeace', 'corporationXYZ'
+                    .type:
+                      type: text
+                      label: RESEARCHER_THEME.PAGES.RESUME.PROJECTS.TYPE
+                      placeholder: e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'

@@ -1,0 +1,25 @@
+<footer class="footer is-{{ theme_config.primary_color }}">
+  <div class="container">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item is-hidden-mobile">
+          <span class="icon is-medium"><i class="fa fa-rocket"></i></span>
+        </div>
+        <div class="level-item">
+          <div>
+            <p>&copy; {% if theme_config.initial_date %}{{ theme_config.initial_date|date("Y") }} &mdash; {% endif %}{{ "now"|date("Y") }} <a href="{{ base_url }}">{{ site.title|e('html') }}</a></p>
+            <p class="is-size-7">
+              Developed by <a href="https://leonidboykov.com">Leonid Boykov</a>. Powered by <a href="https://getgrav.com">Grav</a> and <a href="https://github.com/leonidboykov/grav-theme-researcher">Researcher</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="level-right is-hidden-mobile">
+        {% for page in pages.children.visible %}
+        {% set current_page = (page.active or page.activeChild) ? 'is-active' : '' %}
+          <a class="level-item" href="{{ page.url }}">{{ page.menu }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</footer>

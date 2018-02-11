@@ -1,0 +1,30 @@
+<section class="hero is-{{ header.section_height }} is-{{ header.section_color }}">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+      {% if header.callout_align == 'right' and header.callout_image %}
+        <div class="column is-hidden-mobile">
+          {{ page.media[header.callout_image].html }}
+        </div>
+      {% endif %}
+      {% if header.callout_align != 'center' %}
+      <div class="column is-7">
+        <h2 class="title is-2">{{ page.title }}</h2>
+        <div class="content is-size-5">{{ page.content }}</div>
+      </div>
+      {% endif %}
+      {% if header.callout_align == 'left' and header.callout_image %}
+        <div class="column is-hidden-mobile">
+          {{ page.media[header.callout_image].html }}
+        </div>
+      {% endif %}
+      {% if header.callout_align == 'center' %}
+        <div class="column has-text-centered">
+          <h2 class="title is-2">{{ page.title }}</h2>
+          <div class="content is-size-5">{{ page.content }}</div>
+        </div>
+      {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

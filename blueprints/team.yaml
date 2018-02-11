@@ -1,71 +1,29 @@
 title: Team
-'@extends':
-    type: default
-    context: blueprints://pages
+extends@:
+  type: default
+  context: blueprints://pages
 child_type: member
 
-title: Team
-rules:
-  slug:
-    pattern: "[a-z][a-z0-9_\-]+"
-    min: 2
-    max: 80
 form:
   fields:
     tabs:
-      type: tabs
       active: 1
       fields:
+        content:
+          fields:
+            header.title:
+              type: text
+              autofocus: true
+              style: horizontal
+              label: PLUGIN_ADMIN.TITLE
+            content:
+              unset@: true
+            header.media_order:
+              unset@: true
         advanced:
+          type: tab
           fields:
             overrides:
               fields:
                 header.child_type:
                   default: member
-        section:
-          type: tab
-          title: TABS.SECTION
-          fields:
-            header.section_size:
-              type: select
-              label: SECTION.SECTION_SIZE.LABEL
-              classes: fancy
-              default: medium
-              options:
-                'small': 'SECTION.SECTION_SIZE.SMALL'
-                'medium': 'SECTION.SECTION_SIZE.MEDIUM'
-                'large': 'SECTION.SECTION_SIZE.LARGE'
-                'fullheight': 'SECTION.SECTION_SIZE.FULLHEIGHT'
-            header.section_style:
-              type: select
-              label: SECTION.SECTION_COLOR
-              classes: fancy
-              default: white
-              options:
-                'white': 'White'
-                'light': 'Light'
-                'lightblue': 'Light Blue'
-                'primary': 'Primary'
-                'info': 'Info'
-                'success': 'Success'
-                'warning': 'Warning'
-                'danger': 'Danger'
-                'dark': 'Dark'
-            header.title_enabled:
-              type: toggle
-              label: SECTION.SHOW_TITLE
-              default: 1
-              options:
-                  1: PLUGIN_ADMIN.YES
-                  0: PLUGIN_ADMIN.NO
-              validate:
-                  type: bool
-            header.title_position:
-              type: select
-              label: SECTION.TITLE_POSITION
-              classes: fancy
-              default: centered
-              options:
-                'left': OBJECT_POSITION.LEFT
-                'centered': 'OBJECT_POSITION.CENTER'
-                'right': 'OBJECT_POSITION.RIGHT'

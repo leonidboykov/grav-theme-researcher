@@ -1,15 +1,15 @@
-name: iBrain Tech
-version: 1.1.0
-description: Exclusive theme for iBrain Ltd
+name: Researcher
+version: 0.3.0
+description: Researcher Grav theme
 icon: code
 author:
   name: Leonid Boykov
   email: leonid.v.boykov@gmail.com
-homepage: https://github.com/leonidboykov/grav-theme-ibraintech
-demo: https://i-brain.tech
-keywords: grav, theme, responsive
-bugs: https://github.com/leonidboykov/grav-theme-ibraintech/issues
-readme: https://github.com/leonidboykov/grav-theme-ibraintech/blob/develop/README.md
+homepage: https://github.com/leonidboykov/grav-theme-researcher
+demo: https://space.iias.spb.su
+keywords: grav, theme, responsive, flexbox
+bugs: https://github.com/leonidboykov/grav-theme-researcher/issues
+readme: https://github.com/leonidboykov/grav-theme-researcher/blob/develop/README.md
 license: MIT
 
 form:
@@ -17,12 +17,54 @@ form:
   fields:
     settings:
       type: section
-      title: SETTINGS.LABEL
+      title: RESEARCHER_THEME.SETTINGS.LABEL
       underline: true
       fields:
-        initial.date:
-          type: datetime
-          label: SETTINGS.YEAR_OF_FOUNDATION
-          help: SETTINGS.YEAR_OF_FOUNDATION.HELP
-          default: 01-01-2016 00:00
-          validate.required: true
+        initial_date:
+          type: date
+          label: RESEARCHER_THEME.SETTINGS.YEAR_OF_FOUNDATION
+          size: medium
+          default: 01-01-2016
+          validate:
+            required: false
+        primary_color:
+          type: select
+          label: RESEARCHER_THEME.SETTINGS.COLOR.PRIMARY
+          size: small
+          classes: fancy
+          default: primary
+          options:
+            default: none
+            light: light
+            primary: primary
+            info: info
+            link: link
+            success: success
+            warning: warning
+            danger: danger
+            dark: dark
+        navbar_fixed:
+          type: toggle
+          label: RESEARCHER_THEME.SETTINGS.NAVBAR_FIXED
+          default: 0
+          options:
+            1: PLUGIN_ADMIN.YES
+            0: PLUGIN_ADMIN.NO
+          validate:
+            type: bool
+        publications_limit:
+          type: text
+          label: RESEARCHER_THEME.SETTINGS.PUBLICATIONS.LIMIT
+          size: small
+          default: 10
+          validate:
+            type: number
+            min: 1
+        projects_limit:
+          type: text
+          label: RESEARCHER_THEME.SETTINGS.PROJECTS.LIMIT
+          size: small
+          default: 10
+          validate:
+            type: number
+            min: 1

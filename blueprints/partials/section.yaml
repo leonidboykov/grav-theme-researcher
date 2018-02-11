@@ -1,0 +1,36 @@
+form:
+  fields:
+    header.section_height:
+      type: select
+      label: RESEARCHER_THEME.PAGES.SECTION.HEIGHT
+      classes: fancy
+      default: medium
+      options:
+        small: small
+        medium: medium
+        large: large
+        fullheight: fullheight
+    header.section_color:
+      type: select
+      label: RESEARCHER_THEME.PAGES.SECTION.COLOR
+      classes: fancy
+      default: light
+      options:
+        default: none
+        light: light
+        primary: primary
+        info: info
+        link: link
+        success: success
+        warning: warning
+        danger: danger
+        dark: dark
+    header.section_is_bold:
+      type: toggle
+      label: RESEARCHER_THEME.PAGES.SECTION.ENABLE_GRADIENT
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+      validate:
+        type: bool

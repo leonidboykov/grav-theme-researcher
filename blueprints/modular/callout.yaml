@@ -1,0 +1,45 @@
+title: Callout
+extends@: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        content:
+          type: tab
+          title: Content
+          fields:
+            header.title:
+              type: text
+              autofocus: true
+              style: horizontal
+              label: PLUGIN_ADMIN.TITLE
+        section:
+          type: tab
+          title: Section
+          ordering@: content
+          import@:
+            type: partials/section
+            context: blueprints://
+          fields:
+            header.callout_align:
+              type: select
+              style: horizontal
+              label: RESEARCHER_THEME.PAGES.CALLOUT.ALIGN
+              classes: fancy
+              default: left
+              options:
+                left: left
+                center: center
+                right: right
+            header.callout_image:
+              type: filepicker
+              style: horizontal
+              label: RESEARCHER_THEME.PAGES.CALLOUT.IMAGE
+              folder: '@self'
+              preview_images: true
+              accept:
+                - .png
+                - .jpg

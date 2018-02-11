@@ -1,0 +1,70 @@
+<div class="column is-12">
+  <div class="card">
+    <div class="card-image">
+      <figure class="image">{{ page.media[header.resume_basics_image].html }}</figure>
+    </div>
+    <div class="card-content">
+      <h1 class="title is-3">{{ header.resume_basics_name }}</h1>
+      <p class="subtitle is-6 has-text-grey">{{ header.resume_basics_label }}</p>
+      {% if header.resume_basics_email %}
+        <div class="media">
+          <div class="media-left">
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+          </div>
+          <div class="media-content">
+            <a href="mailto:{{ header.resume_basics_email|safe_email }}">
+              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.EMAIL'|t }}
+            </a>
+          </div>
+        </div>
+      {% endif %}
+      {% if header.resume_basics_url %}
+        <div class="media">
+          <div class="media-left">
+            <span class="icon"><i class="fas fa-link"></i></span>
+          </div>
+          <div class="media-content">
+            <a href="{{ header.resume_basics_url }}">
+              {{ 'RESEARCHER_THEME.FRONTEND.MEMBER.HOMEPAGE'|t }}
+            </a>
+          </div>
+        </div>
+      {% endif %}
+      {% if header.resume_basics_phone %}
+        <div class="media">
+          <div class="media-left">
+            <span class="icon"><i class="fas fa-phone"></i></span>
+          </div>
+          <div class="media-content">
+            {{ header.resume_basics_phone }}
+          </div>
+        </div>
+      {% endif %}
+      {% if header.resume_location_address %}
+        <div class="media">
+          <div class="media-left">
+            <span class="icon"><i class="fas fa-map-marker"></i></span>
+          </div>
+          <div class="media-content is-size-7">
+            {{ [
+              header.resume_location_address,
+              header.resume_location_city,
+              header.resume_location_region,
+              header.resume_location_country_code,
+              header.resume_location_postal_code ]|array_filter|join(', ') }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    {% if header.resume_profiles %}
+      <div class="card-footer">
+      {% for profile in header.resume_profiles %}
+        <a class="card-footer-item" href="{{ profile.url }}">
+          <span class="icon"><i class="fab fa-{{ profile.network|lower }}"></i></span>
+          {% if header.resume_profiles|length <= 2 %}{{ profile.network }}{% endif %}
+        </a>
+      {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>

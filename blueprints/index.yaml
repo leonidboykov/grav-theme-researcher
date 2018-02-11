@@ -1,0 +1,33 @@
+title: Index
+extends@:
+  type: modular
+  context: blueprints://modular
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        content:
+          type: tab
+          title: Content
+          fields:
+            header.title:
+              type: text
+              autofocus: true
+              style: horizontal
+              label: PLUGIN_ADMIN.TITLE
+            header.sub_title:
+              type: text
+              autofocus: true
+              style: horizontal
+              label: RESEARCHER_THEME.PAGES.SUB_TITLE
+              ordering@: header.title
+        section:
+          type: tab
+          title: Section
+          ordering@: content
+          import@:
+            type: partials/section
+            context: blueprints://

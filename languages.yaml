@@ -1,123 +1,130 @@
 en:
-  SCROLL_TO_TOP: Top
-  SETTINGS:
-    LABEL: Settings
-    YEAR_OF_FOUNDATION:
-      NAME: Year of foundation
-      HELP: Initial year in footer
-  ICON: Icon
-  TABS:
-    SECTION: Section
-    FEATURES: Features
-  TEXT:
-    PAGE_MEDIA: Page media
-  SECTION:
-    SECTION_SIZE:
-      LABEL: Section size
-      SMALL: Small
-      MEDIUM: Medium
-      LARGE: Large
-      FULLHEIGHT: Full height
-    SECTION_COLOR:
-      LABEL: Section color
-    SHOW_TITLE: Show title
-    TITLE_POSITION: Title position
-    EMPTY: Sectionless (for fullwidth slider)
-  FEATURES:
-    STYLE_OF_FEATURES:
-      LABEL: Style of `Features` block
-      SMALL: Small
-      LARGE: Large
-    HEADER: Header
-    TEXT: Description
-  OBJECT_POSITION:
-    LABEL: Object position
-    RIGHT: Right
-    LEFT: Left
-    CENTER: Center
-    DISABLED: Disabled
-  PUBLICATIONS:
-    FILE_ICON:
-      LABEL: File icon
-      HELP: FontAwesome file type icon (fa-<type>-o)
-  BLOG:
-    ITEM:
-      CONTINUE_READING: Continue reading...
-      NEXT_POST: Next Post
-      PREV_POST: Previous Post
-  PEOPLE:
-    MEMBER:
-      FULL_NAME:
-        LABEL: Full Name
-        PLACEHOLDER: John Doe
-      SHORT_NAME:
-        LABEL: Short Name
-        PLACEHOLDER: J. Doe
-      JOB:
-        LABEL: Job
-        PLACEHOLDER: Lead Developer
-      EMAIL:
-        LABEL: Email
-        PLACEHOLDER: user@example.com
-        HELP: This filed is protected against spam bots
-      FULL_DESCRIPTION:
-        LABEL: Full Description
-      SHORT_DESCRIPTION:
-        LABEL: Short Description
-        PLACEHOLDER: Time traveler
-      AVATAR:
-        LABEL: Photo
-      SHOW_ON_INDEX:
-        LABEL: Show on Home page
-      PHOTOS:
-        LABEL: Photos
-  ERROR: Error
-
-ru:
-  SCROLL_TO_TOP: Наверх
-  SETTINGS:
-    LABEL: Настройки
-    YEAR_OF_FOUNDATION:
-      NAME: Год основания
-      HELP: Начальный год в подвале
-  ICON: Иконка
-  TABS:
-    SECTION: Секция
-    FEATURES: Особенности
-  TEXT:
-    PAGE_MEDIA: Изображения
-  SECTION:
-    SECTION_SIZE:
-      LABEL: Размер секции
-      SMALL: Маленькая
-      MEDIUM: Средняя
-      LARGE: Большая
-      FULLHEIGHT: Полноэкранная
-    SECTION_COLOR:
-      LABEL: Цвет секции
-    SHOW_TITLE: Показывать заголовок
-    TITLE_POSITION: Положение заголовка
-    EMPTY: Без секции (для главного слайдера)
-  FEATURES:
-    STYLE_OF_FEATURES:
-      LABEL: Стиль блока `Особенностей`
-      SMALL: Маленький
-      LARGE: Большой
-    HEADER: Заголовок
-    TEXT: Описание
-  OBJECT_POSITION:
-    LABEL: Положение объекта
-    RIGHT: Справа
-    LEFT: Слева
-    CENTER: В центре
-    DISABLED: Скрыть
-  PUBLICATIONS:
-    FILE_ICON:
-      LABEL: Иконка файла
-      HELP: Иконка FontAwesome публикуемого файла (fa-<type>-o)
-  BLOG:
-    ITEM:
-      CONTINUE_READING: Читать далее...
-      NEXT_POST: Следующая запись
-      PREV_POST: Предыдущая запись
-  ERROR: Ошибка
+  RESEARCHER_THEME:
+    SETTINGS:
+      LABEL: Settings
+      YEAR_OF_FOUNDATION: Foundation year
+      COLOR:
+        PRIMARY: Primary Color
+      NAVBAR_FIXED: Fixed Navbar
+      PUBLICATIONS:
+        LIMIT: Publications Limit
+      PROJECTS:
+        LIMIT: Projects Limit
+    PAGES:
+      SUB_TITLE: Subtitle
+      THUMBNAIL: Thumbnail
+      SECTION:
+        HEIGHT: Section Height
+        COLOR: Section Color
+        ENABLE_GRADIENT: Enable Gradient
+      CALLOUT:
+        ALIGN: Callout Align
+        IMAGE: Callout Image
+      RESUME:
+        TAB: Resume
+        BASICS:
+          SECTION: About
+          NAME: Name
+          LABEL: Label
+          IMAGE: Image
+          EMAIL: Email
+          PHONE: Phone
+          URL: Website
+          SUMMARY: Summary
+        LOCATION:
+          SECTION: Location
+          ADDRESS: Address
+          POSTAL_CODE: Postal Code
+          CITY: City
+          COUNTRY_CODE: Contry Code
+          REGION: Region
+        PROFILES:
+          SECTION: Social
+          NETWORK: Social
+          USERNAME: Username
+          URL: URL
+        WORK:
+          SECTION: Work Experience
+          NAME: Name
+          LOCATION: Location
+          DESCRIPTION: Description
+          POSITION: Position
+          URL: URL
+          START_DATE: Start Date
+          END_DATE: End Date
+          SUMMARY: Summary
+          HIGHLIGHTS: Hightlights
+        VOLUNTEER:
+          SECTION: Volunteer Work
+          NAME: Name
+          POSITION: Position
+          URL: URL
+          START_DATE: Start Date
+          END_DATE: End Date
+          SUMMARY: Summary
+          HIGHLIGHTS: Hightlights
+        EDUCATION:
+          SECTION: Education
+          INSTITUTION: Institution
+          AREA: Area
+          STUDY_TYPE: Study Type
+          START_DATE: Start Date
+          END_DATE: End Date
+          GPA: GPA
+          COURSES: Courses
+        AWARDS:
+          SECTION: Awards
+          TITLE: Title
+          DATE: Date
+          AWARDER: Awarder
+          SUMMARY: Summary
+        PUBLICATIONS:
+          SECTION: Publications
+          NAME: Name
+          CO_AUTHORS: Co Authors
+          KEYWORDS: Keywords
+          PUBLISHER: Publisher
+          RELEASE_DATE: Release Date
+          URL: URL
+          SUMMARY: Summary
+          FILE: File
+        SKILLS:
+          SECTION: Skills
+          NAME: Name
+          LEVEL: Level
+          KEYWORDS: Keywords
+        LANGUAGES:
+          SECTION: Languages
+          LANGUAGE: Language
+          FLUENCY: Fluency
+        INTERESTS:
+          SECTION: Interests
+          NAME: Name
+          KEYWORDS: Keywords
+        REFERENCES:
+          SECTION: References
+          NAME: Name
+          REFERENCE: Reference
+        PROJECTS:
+          SECTION: Projects
+          NAME: Name
+          DESCRIPTION: Description
+          HIGHLIGHTS: Highlights
+          KEYWORDS: Keywords
+          START_DATE: Start Date
+          END_DATE: End Date
+          URL: URL
+          ROLES: Roles
+          ENTITY: Entity
+          TYPE: Type
+    FRONTEND:
+      MEMBER:
+        EMAIL: Email
+        HOMEPAGE: Homepage
+        PRESENT: present
+        DOWNLOAD: download
+        WITH: with
+        SHOWING_LATEST: showing %d latest %s
+      LINK: Link
+      NEXT: Next
+      PREVIOUS: Previous

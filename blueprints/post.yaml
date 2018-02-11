@@ -1,0 +1,31 @@
+title: Post
+extends@: default
+
+form:
+  fields:
+    tabs:
+      active: 1
+      fields:
+        content:
+          title: Content
+          fields:
+            header.author:
+              type: pages
+              label: Author
+              classes: fancy
+              start_route: /members
+              default: /members/leonid-boykov
+              show_all: false
+              show_modular: false
+              show_root: false
+              ordering@: header.title
+            header.thumbnail:
+              type: filepicker
+              style: horizontal
+              ordering@: header.author
+              label: RESEARCHER_THEME.PAGES.THUMBNAIL
+              folder: '@self'
+              preview_images: true
+              accept:
+                - .png
+                - .jpg
