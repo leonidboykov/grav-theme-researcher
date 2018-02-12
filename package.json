@@ -1,6 +1,6 @@
 {
   "name": "researcher",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Researcher Grav theme",
   "main": "sass/main.sass",
   "scripts": {
