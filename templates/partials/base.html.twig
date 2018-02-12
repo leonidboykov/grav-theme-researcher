@@ -7,7 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatable" content="IE=edge">
-    <meta name="theme-color" content="#0a1922"> <!-- TODO: Add theme color chooser -->
+    {% if theme_config.theme_color %}
+      <meta name="theme-color" content="{{ theme_config.theme_color }}">
+    {% endif %}
 
     <!-- TODO: Add page metadata -->
     <!-- TODO: Review page header -->

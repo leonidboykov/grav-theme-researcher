@@ -5,6 +5,7 @@ en:
       YEAR_OF_FOUNDATION: Foundation year
       COLOR:
         PRIMARY: Primary Color
+        THEME: Theme Color (Android)
       NAVBAR_FIXED: Fixed Navbar
       PUBLICATIONS:
         LIMIT: Publications Limit
