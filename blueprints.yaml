@@ -43,6 +43,10 @@ form:
             warning: warning
             danger: danger
             dark: dark
+        theme_color:
+          type: colorpicker
+          label: RESEARCHER_THEME.SETTINGS.COLOR.THEME
+          size: medium
         navbar_fixed:
           type: toggle
           label: RESEARCHER_THEME.SETTINGS.NAVBAR_FIXED
