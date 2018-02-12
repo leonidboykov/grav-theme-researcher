@@ -1,6 +1,6 @@
 {% set langobj = grav['language'] %}
 <a class="navbar-link" href="#">{{ native_name(langswitcher.current) }}</a>
-<div class="navbar-dropdown ">
+<div class="navbar-dropdown is-boxed">
   {% for key in langswitcher.languages %}
     {% if key != langswitcher.current %}
       {% set lang_url = base_url_simple ~ langobj.getLanguageURLPrefix(key)~langswitcher.page_route~page.urlExtension ?: '/' %}
