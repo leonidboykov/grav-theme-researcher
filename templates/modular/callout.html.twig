@@ -1,7 +1,7 @@
 <section class="hero is-{{ header.section_height }} is-{{ header.section_color }}">
   <div class="hero-body">
     <div class="container">
-      <div class="columns is-vcentered">
+      <div class="columns is-vcentered is-variable is-8">
       {% if header.callout_align == 'right' and header.callout_image %}
         <div class="column is-hidden-mobile">
           {{ page.media[header.callout_image].html }}
