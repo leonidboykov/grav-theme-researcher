@@ -1,6 +1,6 @@
 {
   "name": "researcher",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "description": "Researcher Grav theme",
   "main": "sass/main.sass",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/leonidboykov/grav-theme-researcher#readme",
   "devDependencies": {
-    "autoprefixer": "^7.2.6",
+    "autoprefixer": "^8.0.0",
     "css-mqpacker": "^6.0.2",
     "cssnano": "^3.10.0",
     "node-sass": "^4.7.2",
