@@ -17,11 +17,6 @@
         {% set current_page = (page.active or page.activeChild) ? "is-active" : "" %}
           <a class="navbar-item {{ current_page }}" href="{{ page.url }}">{{ page.menu }}</a>
         {% endfor %}
-        {% if config.plugins.langswitcher.enabled %}
-          <div class="navbar-item has-dropdown is-hoverable">
-            {% include 'partials/langswitcher.html.twig' %}
-          </div>
-        {% endif %}
       </div>
     </div>
   </div>

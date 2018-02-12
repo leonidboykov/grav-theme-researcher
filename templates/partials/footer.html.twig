@@ -1,4 +1,4 @@
-<footer class="footer is-{{ theme_config.primary_color }}">
+<footer class="footer">
   <div class="container">
     <div class="level">
       <div class="level-left">
@@ -7,19 +7,22 @@
         </div>
         <div class="level-item">
           <div>
-            <p>&copy; {% if theme_config.initial_date %}{{ theme_config.initial_date|date("Y") }} &mdash; {% endif %}{{ "now"|date("Y") }} <a href="{{ base_url }}">{{ site.title|e('html') }}</a></p>
+            <p>&copy; {% if theme_config.initial_date %}{{ theme_config.initial_date|date("Y") }} &mdash; {% endif %}{{ "now"|date("Y") }} {{ site.title|e('html') }}</p>
             <p class="is-size-7">
               Developed by <a href="https://leonidboykov.com">Leonid Boykov</a>. Powered by <a href="https://getgrav.com">Grav</a> and <a href="https://github.com/leonidboykov/grav-theme-researcher">Researcher</a>
             </p>
           </div>
         </div>
       </div>
-      <div class="level-right is-hidden-mobile">
-        {% for page in pages.children.visible %}
-        {% set current_page = (page.active or page.activeChild) ? 'is-active' : '' %}
-          <a class="level-item" href="{{ page.url }}">{{ page.menu }}</a>
-        {% endfor %}
-      </div>
+      {% if config.plugins.langswitcher.enabled %}
+        <div class="level-right">
+          <div class="level-item">
+            <div class="navbar-item has-dropdown has-dropdown-up is-hoverable">
+              {% include 'partials/langswitcher.html.twig' %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
     </div>
   </div>
 </footer>
