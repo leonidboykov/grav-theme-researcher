@@ -5,8 +5,7 @@
     <div class="container">
       <div class="columns">
         <div class="column is-8">
-          {% set collection = search_results ?: page.collection() %}
-          {% for post in collection %}
+          {% for post in page.collection if post.language == grav.language.getActive %}
           {% set author = page.find(post.header.author) %}
             <div class="columns">
               <div class="column is-12">
@@ -29,6 +28,8 @@
                 </div>
               </div>
             </div>
+          {% else %}
+            {{ 'RESEARCHER_THEME.FRONTEND.NOTHING_FOUND'|t }}
           {% endfor %}
         </div>
         <aside class="column">

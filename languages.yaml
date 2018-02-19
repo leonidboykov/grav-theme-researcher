@@ -129,6 +129,7 @@ en:
       LINK: Link
       NEXT: Next
       PREVIOUS: Previous
+      NOTHING_FOUND: Nothing found, sorry...
 
 ru:
   RESEARCHER_THEME:
@@ -261,3 +262,4 @@ ru:
       LINK: Ссылка
       NEXT: Следующее
       PREVIOUS: Предыдущее
+      NOTHING_FOUND: Ничего не найдено...
