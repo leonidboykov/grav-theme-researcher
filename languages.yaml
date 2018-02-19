@@ -129,3 +129,135 @@ en:
       LINK: Link
       NEXT: Next
       PREVIOUS: Previous
+
+ru:
+  RESEARCHER_THEME:
+    SETTINGS:
+      LABEL: Настройки
+      YEAR_OF_FOUNDATION: Год основания
+      COLOR:
+        PRIMARY: Основной цвет
+        THEME: Theme Color (Android)
+      NAVBAR_FIXED: Фиксированная навигация
+      PUBLICATIONS:
+        LIMIT: Лимит публикаций
+      PROJECTS:
+        LIMIT: Лимит проектов
+    PAGES:
+      SUB_TITLE: Subtitle
+      THUMBNAIL: Миниатюра
+      SECTION:
+        HEIGHT: Высота секции
+        COLOR: Цвет секции
+        ENABLE_GRADIENT: Включить градиент
+      CALLOUT:
+        ALIGN: Callout Align
+        IMAGE: Callout Image
+      RESUME:
+        TAB: Резюме
+        BASICS:
+          SECTION: Биография
+          NAME: Имя
+          LABEL: Метка
+          IMAGE: Фотография
+          EMAIL: Email
+          PHONE: Телефон
+          URL: Веб-сайт
+          SUMMARY: Краткое описание
+        LOCATION:
+          SECTION: Адрес
+          ADDRESS: Адрес
+          POSTAL_CODE: Почтовый индекс
+          CITY: Город
+          COUNTRY_CODE: Страна
+          REGION: Регион
+        PROFILES:
+          SECTION: Социальные сети
+          NETWORK: Сеть
+          USERNAME: Имя
+          URL: URL
+        WORK:
+          SECTION: Опыт работы
+          NAME: Name
+          LOCATION: Location
+          DESCRIPTION: Description
+          POSITION: Position
+          URL: URL
+          START_DATE: Start Date
+          END_DATE: End Date
+          SUMMARY: Summary
+          HIGHLIGHTS: Hightlights
+        VOLUNTEER:
+          SECTION: Волонтерская работа
+          NAME: Name
+          POSITION: Position
+          URL: URL
+          START_DATE: Start Date
+          END_DATE: End Date
+          SUMMARY: Summary
+          HIGHLIGHTS: Hightlights
+        EDUCATION:
+          SECTION: Образование
+          INSTITUTION: Institution
+          AREA: Area
+          STUDY_TYPE: Study Type
+          START_DATE: Start Date
+          END_DATE: End Date
+          GPA: GPA
+          COURSES: Courses
+        AWARDS:
+          SECTION: Awards
+          TITLE: Title
+          DATE: Date
+          AWARDER: Awarder
+          SUMMARY: Summary
+        PUBLICATIONS:
+          SECTION: Публикации
+          NAME: Name
+          CO_AUTHORS: Co Authors
+          KEYWORDS: Keywords
+          PUBLISHER: Publisher
+          RELEASE_DATE: Release Date
+          URL: URL
+          SUMMARY: Summary
+          FILE: File
+        SKILLS:
+          SECTION: Навыки
+          NAME: Name
+          LEVEL: Level
+          KEYWORDS: Keywords
+        LANGUAGES:
+          SECTION: Языки
+          LANGUAGE: Language
+          FLUENCY: Fluency
+        INTERESTS:
+          SECTION: Интересы
+          NAME: Name
+          KEYWORDS: Keywords
+        REFERENCES:
+          SECTION: References
+          NAME: Name
+          REFERENCE: Reference
+        PROJECTS:
+          SECTION: Проекты
+          NAME: Name
+          DESCRIPTION: Description
+          HIGHLIGHTS: Highlights
+          KEYWORDS: Keywords
+          START_DATE: Start Date
+          END_DATE: End Date
+          URL: URL
+          ROLES: Roles
+          ENTITY: Entity
+          TYPE: Type
+    FRONTEND:
+      MEMBER:
+        EMAIL: Email
+        HOMEPAGE: Сайт
+        PRESENT: наст. вр.
+        DOWNLOAD: скачать
+        WITH: совместно с
+        SHOWING_LATEST: показано %d последних %s
+      LINK: Ссылка
+      NEXT: Следующее
+      PREVIOUS: Предыдущее
