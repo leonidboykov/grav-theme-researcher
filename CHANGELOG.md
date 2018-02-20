@@ -4,23 +4,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.1.0] - 2017-05-20
+## [0.12.2] - 2018-02-20
+### Fixed
+- Hide untranslated posts
+
+## [0.12.1] - 2018-02-20
 ### Added
-- Search
+- Russian language
 
-### Changes
-- Language switch is now a button
-
-## [1.0.0] - 2017-04-14
+## [0.12.0] - 2018-02-12
 ### Added
-- Index page
-- Project page
-- Team page
-- Blog page
-- Contacts page
+- Error page
 
-### Changes
-- Team page now _list_ (was _modular_)
+### Changed
+- Language switcher moved to a footer
+
+## [0.11.0] - 2018-02-12
+### Added
+- JSON Resume for member profile
+
+### Changed
+- Ported Scientific theme from Hugo
 
 ## [0.1.0] - 2017-03-10
 ### Added
