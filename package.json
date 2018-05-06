@@ -1,12 +1,12 @@
 {
   "name": "researcher",
-  "version": "0.12.2",
+  "version": "0.12.3",
   "description": "Researcher Grav theme",
   "main": "sass/main.sass",
   "scripts": {
     "build": "npm run build-clean && npm run build-sass && npm run build-postcss",
     "build-clean": "rimraf css",
-    "build-postcss": "postcss --use autoprefixer cssnano css-mqpacker --map false --output css/main.css css/main.css",
+    "build-postcss": "postcss --use autoprefixer cssnano css-mqpacker --no-map --output css/main.css css/main.css",
     "build-sass": "node-sass --output-style compressed sass/main.sass css/main.css",
     "serve": "npm run build-sass -- --watch"
   },
@@ -27,14 +27,14 @@
   },
   "homepage": "https://github.com/leonidboykov/grav-theme-researcher#readme",
   "devDependencies": {
-    "autoprefixer": "^8.0.0",
+    "autoprefixer": "^8.4.1",
     "css-mqpacker": "^6.0.2",
     "cssnano": "^3.10.0",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.9.0",
     "postcss-cli": "^5.0.0",
     "rimraf": "^2.6.2"
   },
   "dependencies": {
-    "bulma": "^0.6.2"
+    "bulma": "^0.7.1"
   }
 }
