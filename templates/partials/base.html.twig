@@ -19,7 +19,7 @@
 
     {% block stylesheets %}
       <!-- TODO: Make fonts customisable -->
-      {% do assets.addCss('https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic', 100) %}
+      {% do assets.addCss('https://fonts.googleapis.com/css?family=Roboto:400,700', 100) %}
       {% do assets.addCss('theme://css/main.css', 99) %}
     {% endblock %}
     {{ assets.css() }}
